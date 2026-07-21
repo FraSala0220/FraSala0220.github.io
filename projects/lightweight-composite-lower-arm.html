@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Lightweight composite MacPherson lower-arm project by Francesco Sala, developed with MATLAB, Abaqus and Isight."
+    >
+    <title>Lightweight Composite MacPherson Lower Arm | Francesco Sala</title>
+    <link rel="stylesheet" href="../styles.css?v=project-overview-20260716">
+  </head>
+  <body class="project-page">
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Back to Francesco Sala homepage">Francesco Sala</a>
+      <nav class="nav-links" aria-label="Project navigation">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-hero section-shell" aria-labelledby="project-title">
+        <div class="project-hero-copy">
+          <p class="eyebrow">Composite Structures &middot; Lightweight Design</p>
+          <h1 class="project-title-compact" id="project-title">Lightweight Composite MacPherson Lower Arm</h1>
+          <p class="project-subtitle">A hybrid CFRP suspension component designed around impact resistance and mass</p>
+          <p class="project-lede">
+            A four-person composite-structures project combining analytical predesign, topology optimization, detailed
+            FEA, plybook optimization and manufacturing assessment for a safety-critical lower control arm.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="../index.html#projects">Back to Projects</a>
+            <a class="button secondary" href="../index.html">Homepage</a>
+          </div>
+        </div>
+
+        <div>
+          <img
+            class="project-image project-image-hero project-image-contain"
+            src="../assets/images/lower-arm/lower-arm-hero.jpg"
+            alt="Final CAD design of the hybrid CFRP MacPherson lower arm"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-overview" aria-labelledby="project-overview-title">
+        <div class="section-heading">
+          <h2 id="project-overview-title">Overview</h2>
+        </div>
+        <div class="project-overview-grid">
+          <article class="project-overview-card">
+            <h3>Engineering Challenge</h3>
+            <p>
+              Design a composite MacPherson lower arm for 25 kN longitudinal and 30 kN lateral impact loads while
+              preserving bushing compatibility and preventing complete separation after failure.
+            </p>
+          </article>
+
+          <article class="project-overview-card">
+            <h3>My Contribution</h3>
+            <ul>
+              <li>Performed topology optimization and developed the CAD geometry.</li>
+              <li>Built and assessed the detailed FEA models.</li>
+              <li>Developed the composite plybook and Isight optimization.</li>
+              <li>Defined the manufacturing approach.</li>
+            </ul>
+          </article>
+
+          <article class="project-overview-card project-overview-card-outcome">
+            <h3>Outcome</h3>
+            <ul>
+              <li>Complete hybrid lower-arm design at approximately 1.6 kg.</li>
+              <li>Optimized Tsai-Hill index reduced from 0.685 to 0.587.</li>
+              <li>Manufacturing concept covering inserts, tether, lamination and molds.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-facts" aria-label="Project summary">
+        <dl class="project-info-grid">
+          <div>
+            <dt>Role</dt>
+            <dd>Topology, CAD, FEA, Plybook &amp; Manufacturing</dd>
+          </div>
+          <div>
+            <dt>Loads</dt>
+            <dd>25 kN longitudinal &middot; 30 kN lateral</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>MATLAB &middot; Abaqus &middot; Isight</dd>
+          </div>
+          <div class="project-outcome-card">
+            <dt>Outcome</dt>
+            <dd>&asymp; 1.6 kg total mass</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="challenge-title">
+        <div class="section-heading">
+          <p class="eyebrow">The Challenge</p>
+          <h2 id="challenge-title">Replace a conventional lower arm with a damage-tolerant composite architecture.</h2>
+        </div>
+        <div class="project-text">
+          <p>
+            The assignment required a composite MacPherson lower arm capable of carrying quasi-static impact loads while
+            remaining compatible with the prescribed bushing seats and mounting-screw access.
+          </p>
+          <p>
+            The design had to resist a 25 kN longitudinal impact and a 30 kN lateral impact applied at the ball joint,
+            including a 35 mm out-of-plane offset. A further safety requirement prohibited complete separation after
+            failure, preventing wheel detachment.
+          </p>
+          <p>
+            The resulting concept drew on Formula 1 wishbone construction: two bonded composite shells, metallic load
+            introduction points and an internal high-strength tether acting as a mechanical fail-safe.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="predesign-title">
+        <div class="section-heading">
+          <p class="eyebrow">Predesign &amp; Topology</p>
+          <h2 id="predesign-title">Analytical sizing established the section; topology optimization shaped the load paths.</h2>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              A MATLAB implementation of the displacement method calculated nodal reactions, displacements and optimal
+              hollow rectangular sections. Classical Lamination Theory supplied the equivalent properties of an initial
+              composite layup.
+            </p>
+            <p>
+              A beam model in Abaqus verified the analytical solution: the predicted displacement was 0.1492 mm versus
+              0.1491 mm in FEA, with close agreement across the reaction forces.
+            </p>
+            <p>
+              Abaqus topology optimization then minimized strain with 10% and 5% remaining-volume constraints. The
+              resulting load paths guided several CAD iterations and the final hollow-arm geometry.
+            </p>
+          </div>
+          <img
+            class="project-image"
+            src="../assets/images/lower-arm/topology-optimization.jpg"
+            alt="Abaqus topology-optimization result used to guide the lower-arm geometry"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="architecture-title">
+        <div class="section-heading">
+          <p class="eyebrow">Hybrid Architecture</p>
+          <h2 id="architecture-title">Each material is assigned to the function it performs best.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <div>
+              <p class="tag">Composite Body</p>
+              <h3>T800 skins around a Rohacell core</h3>
+            </div>
+            <ul class="project-list">
+              <li>T800 2/2 twill prepreg skins</li>
+              <li>Rohacell 110 IG-F foam core</li>
+              <li>Hollow two-half construction</li>
+              <li>Autoclave-cured sandwich architecture</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Load Introduction &amp; Safety</p>
+              <h3>7075 inserts with an internal Zylon tether</h3>
+            </div>
+            <ul class="project-list">
+              <li>CNC-machined aluminium joints</li>
+              <li>Structural adhesive interfaces</li>
+              <li>Hidden Zylon tether routed through the hollow arm</li>
+              <li>Mechanical retention even after shell failure</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="fea-title">
+        <div class="section-heading">
+          <p class="eyebrow">Detailed FEA</p>
+          <h2 id="fea-title">Shells, solids, adhesive damage and hyperelastic bushings in one model.</h2>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              The CFRP skins were represented with shell elements, tied to a solid Rohacell core and solid aluminium
+              joints. Local mesh refinement around the inserts supported compliance and bonding-surface optimization.
+            </p>
+            <p>
+              The final contact model replaced ideal ties with a 0.14 mm 3M AF 555 adhesive layer. Damage initiation
+              used a quadratic traction criterion, while mixed-mode evolution followed the Benzeggagh&ndash;Kenane law.
+            </p>
+            <p>
+              Rubber bushings were represented with a Mooney&ndash;Rivlin hyperelastic model. The assessment also included
+              Tsai&ndash;Hill and Tsai&ndash;Wu composite criteria, eigenvalue buckling and geometric nonlinearity.
+            </p>
+          </div>
+          <div class="project-media-stack">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/lower-arm/fea-overview.jpg"
+              alt="Finite-element result for the complete hybrid lower-arm model"
+              loading="lazy"
+            >
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/lower-arm/adhesive-damage.png"
+              alt="Cohesive adhesive damage result along the composite-to-insert interfaces"
+              loading="lazy"
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="optimization-title">
+        <div class="section-heading">
+          <p class="eyebrow">Plybook Optimization</p>
+          <h2 id="optimization-title">Isight converted ply angles into a controlled structural optimization problem.</h2>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              Ply orientations were treated as design variables in Isight. An exploratory DOE was followed by a
+              multi-island genetic algorithm over 400 iterations, minimizing the maximum Tsai&ndash;Hill and Tsai&ndash;Wu
+              indices.
+            </p>
+            <p>
+              The initial symmetric layup
+              <strong>[-45/45/0/-45/45/0/-45]s</strong> evolved into
+              <strong>[90/60/-30/-60/-60/30/30]s</strong>.
+            </p>
+            <p>
+              The maximum Tsai&ndash;Hill index decreased from <strong>0.685</strong> to <strong>0.587</strong>, improving
+              the laminate margin while retaining the selected structural concept.
+            </p>
+          </div>
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/lower-arm/plybook.png"
+            alt="Layered composite plybook visualization used in the laminate model"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="safety-title">
+        <div class="section-heading">
+          <p class="eyebrow">Safety &amp; Manufacturing</p>
+          <h2 id="safety-title">Failure retention and producibility were designed into the component.</h2>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              The internal Zylon tether connects the metallic joints and remains slack during normal operation. If the
+              carbon shell fractures, the tether retains the wheel-side components and prevents complete separation.
+            </p>
+            <p>
+              Aluminium adhesive zones are sandblasted before assembly. Inserts and Rohacell core are positioned before
+              lamination, and the two skins overlap to create a continuous bonded closure.
+            </p>
+            <p>
+              Two CFRP mold concepts were developed for high surface finish, dimensional accuracy and matching thermal
+              expansion. Both were sized for the 6 bar pressure required by the autoclave cycle.
+            </p>
+          </div>
+          <div class="project-media-stack">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/lower-arm/safety-tether.png"
+              alt="Transparent assembly view showing the internal Zylon safety tether"
+              loading="lazy"
+            >
+            <img
+              class="project-image"
+              src="../assets/images/lower-arm/mold-design.jpg"
+              alt="Composite lower arm positioned inside the mold design"
+              loading="lazy"
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="outcome-title">
+        <div class="section-heading">
+          <p class="eyebrow">Outcome</p>
+          <h2 id="outcome-title">A complete hybrid lower arm at approximately 1.6 kg.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <div>
+              <p class="tag">Composite System</p>
+              <h3>809 g</h3>
+            </div>
+            <ul class="project-list">
+              <li>714 g T800 carbon skins</li>
+              <li>95 g Rohacell foam core</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Joints &amp; Tether</p>
+              <h3>805 g</h3>
+            </div>
+            <ul class="project-list">
+              <li>775 g total for three 7075 aluminium joints</li>
+              <li>30 g Zylon tether and terminals</li>
+            </ul>
+          </article>
+        </div>
+        <div class="project-text">
+          <p>
+            The estimated component breakdown totals 1,614 g, reported as an overall project outcome of
+            <strong>approximately 1.6 kg</strong>.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="methods-title">
+        <div class="section-heading">
+          <p class="eyebrow">Methods &amp; Tools</p>
+          <h2 id="methods-title">Methods used from analytical sizing to manufacturing definition.</h2>
+        </div>
+        <ul class="method-tags" aria-label="Methods and tools">
+          <li>MATLAB</li>
+          <li>Abaqus</li>
+          <li>Isight</li>
+          <li>Classical Lamination Theory</li>
+          <li>Topology Optimization</li>
+          <li>Composite Shell FEA</li>
+          <li>Tsai-Hill / Tsai-Wu</li>
+          <li>Multi-Island Genetic Algorithm</li>
+          <li>Cohesive Damage</li>
+          <li>Benzeggagh-Kenane Law</li>
+          <li>Mooney-Rivlin Hyperelasticity</li>
+          <li>Buckling &amp; Nonlinear FEA</li>
+          <li>Prepreg Autoclave</li>
+          <li>Composite Mold Design</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Francesco Sala</span>
+      <a href="../index.html#projects">Back to Projects</a>
+    </footer>
+  </body>
+</html>

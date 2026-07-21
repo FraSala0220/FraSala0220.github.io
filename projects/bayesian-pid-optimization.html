@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Bayesian optimization of 21 PID gains for trajectory control of a Franka Emika Panda seven-axis robot in MATLAB."
+    >
+    <title>Bayesian PID Optimization for a 7-Axis Robot | Francesco Sala</title>
+    <link rel="stylesheet" href="../styles.css?v=bayesian-pid-project-20260716">
+  </head>
+  <body class="project-page">
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Back to Francesco Sala homepage">Francesco Sala</a>
+      <nav class="nav-links" aria-label="Project navigation">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-hero section-shell" aria-labelledby="project-title">
+        <div class="project-hero-copy">
+          <p class="eyebrow">Machine Learning for Mechanical Systems &middot; Robot Control</p>
+          <h1 class="project-title-compact" id="project-title">Bayesian PID Optimization for a 7-Axis Robot</h1>
+          <p class="project-subtitle">Automatic tuning of 21 controller gains under actuator constraints</p>
+          <p class="project-lede">
+            A MATLAB study of global and joint-wise Bayesian optimization for the seven independent PID controllers
+            of a Franka Emika Panda robot, balancing trajectory accuracy with torque, velocity and acceleration limits.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="../index.html#projects">Back to Projects</a>
+            <a class="button secondary" href="#results">View Results</a>
+          </div>
+        </div>
+
+        <div>
+          <img
+            class="project-image project-image-hero project-image-contain"
+            src="../assets/images/bayesian-pid-optimization/constrained-zero-start-convergence.png"
+            alt="Bayesian objective convergence below one with constraints and a zero-start trajectory"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-overview" aria-labelledby="project-overview-title">
+        <div class="section-heading">
+          <h2 id="project-overview-title">Overview</h2>
+        </div>
+        <div class="project-overview-grid">
+          <article class="project-overview-card">
+            <h3>Engineering Challenge</h3>
+            <p>
+              Tune 21 proportional, integral and derivative gains so a seven-joint robot follows a prescribed
+              trajectory accurately without exceeding manufacturer torque, velocity or acceleration limits.
+            </p>
+          </article>
+
+          <article class="project-overview-card">
+            <h3>My Contribution</h3>
+            <ul>
+              <li>Contributed to setting up and developing the Bayesian-optimization workflow.</li>
+              <li>Supported results validation, interpretation and technical reporting.</li>
+            </ul>
+          </article>
+
+          <article class="project-overview-card project-overview-card-outcome">
+            <h3>Outcome</h3>
+            <ul>
+              <li>Compared global 21-variable tuning with sequential three-variable tuning.</li>
+              <li>Reached an objective value below 1 with the modified zero-start trajectory.</li>
+              <li>Met physical constraints while retaining accurate trajectory tracking.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-facts" aria-label="Project summary">
+        <dl class="project-info-grid">
+          <div>
+            <dt>Contribution</dt>
+            <dd>Optimization Workflow &middot; Results Validation</dd>
+          </div>
+          <div>
+            <dt>Team</dt>
+            <dd>3 students &middot; 2024&ndash;2025</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>MATLAB &middot; bayesopt &middot; Robot Simulation</dd>
+          </div>
+          <div class="project-outcome-card">
+            <dt>Best Feasible Cost</dt>
+            <dd>&lt; 1</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="challenge-title">
+        <div class="section-heading">
+          <p class="eyebrow">Control Problem</p>
+          <h2 id="challenge-title">Accurate tracking is only useful when the resulting motion remains physically achievable.</h2>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              Each of the robot's seven joints is controlled independently by proportional, integral and derivative
+              gains. A single global optimization therefore explores a 21-dimensional parameter space while every
+              candidate set must be evaluated through a full dynamic simulation.
+            </p>
+            <p>
+              The applied motor torque combines the PID action with model-based compensation for inertia, gravity
+              and friction. Tracking error alone was not sufficient: solutions also had to respect joint-specific
+              torque limits together with velocity and acceleration boundaries.
+            </p>
+          </div>
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/bayesian-pid-optimization/pid-bayesian-control-loop.png"
+            alt="Closed-loop PID motor-control scheme connected to Bayesian optimization"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="workflow-title">
+        <div class="section-heading">
+          <p class="eyebrow">Optimization Workflow</p>
+          <h2 id="workflow-title">The cost function evolved from pure accuracy toward constraint-aware, robust control.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <div>
+              <p class="tag">1 &middot; Explore</p>
+              <h3>Evaluate tracking metrics</h3>
+            </div>
+            <ul class="project-list">
+              <li>Compare position, velocity and acceleration errors</li>
+              <li>Screen mean, squared, maximum and combined formulations</li>
+              <li>Assess RMSE, R&sup2; and peak acceleration</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">2 &middot; Constrain</p>
+              <h3>Enforce physical feasibility</h3>
+            </div>
+            <ul class="project-list">
+              <li>Apply manufacturer torque limits to all seven actuators</li>
+              <li>Penalize excessive velocity and acceleration</li>
+              <li>Reject trajectories with position error above 0.1 rad</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">3 &middot; Reformulate</p>
+              <h3>Improve reference initialization</h3>
+            </div>
+            <ul class="project-list">
+              <li>Ramp the input during the first second</li>
+              <li>Start the velocity and acceleration references from zero</li>
+              <li>Reduce the initial mismatch that dominated constrained runs</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">4 &middot; Decouple</p>
+              <h3>Tune one joint at a time</h3>
+            </div>
+            <ul class="project-list">
+              <li>Reduce each optimization step from 21 variables to 3</li>
+              <li>Proceed sequentially from joint 7 to joint 1</li>
+              <li>Preserve previously optimized gains during later simulations</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" id="results" aria-labelledby="results-title">
+        <div class="section-heading">
+          <p class="eyebrow">Key Results</p>
+          <h2 id="results-title">Zero-start reference profiles unlocked a feasible global solution under constraints.</h2>
+        </div>
+        <div class="metric-row" aria-label="Optimization results">
+          <div>
+            <strong>7</strong>
+            <span>Independently controlled joints</span>
+          </div>
+          <div>
+            <strong>21</strong>
+            <span>PID gains in the global search</span>
+          </div>
+          <div>
+            <strong>100</strong>
+            <span>Maximum evaluations in the final setup</span>
+          </div>
+          <div>
+            <strong>&lt;1</strong>
+            <span>Best constrained, accurate objective value</span>
+          </div>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              Without limits, Bayesian optimization reduced the objective below 1 but generated acceleration peaks
+              that were unsuitable for real actuators. Adding the physical limits initially left the global optimizer
+              above 100 even after 200 evaluations.
+            </p>
+            <p>
+              Reformulating the reference so velocity and acceleration start from zero removed the initial-state
+              conflict. The constrained global search then reached a minimum of approximately 0.10, demonstrating
+              both accurate tracking and compliance with the imposed limits.
+            </p>
+          </div>
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/bayesian-pid-optimization/constrained-zero-start-convergence.png"
+            alt="Bayesian objective convergence below one with constraints and zero-start velocity and acceleration"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="comparison-title">
+        <div class="section-heading">
+          <p class="eyebrow">Strategy Comparison</p>
+          <h2 id="comparison-title">Global and sequential tuning expose the trade-off between precision and feasibility.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/bayesian-pid-optimization/global-trajectory-tracking.png"
+              alt="Reference and measured joint positions from global PID optimization"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">Global Optimization</p>
+              <h3>Higher average precision, harder constrained search</h3>
+            </div>
+          </article>
+
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/bayesian-pid-optimization/sequential-trajectory-tracking.png"
+              alt="Reference and measured joint positions from sequential single-joint PID optimization"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">Sequential Optimization</p>
+              <h3>Simpler search with feasible joint-wise solutions</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="search-title">
+        <div class="section-heading">
+          <p class="eyebrow">Bayesian Search</p>
+          <h2 id="search-title">A Gaussian-process surrogate balances exploration and exploitation across the PID space.</h2>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              MATLAB's <strong>bayesopt</strong> function modeled the expensive objective with a Gaussian Process and
+              selected new candidates using expected improvement. Ten seed points initiated exploration before the
+              optimizer progressively focused on the most promising gain combinations.
+            </p>
+            <p>
+              The three-dimensional view shows the final single-joint candidates in Kp, Ki and Kd space, colored by
+              objective value. It makes the feasible minima and the discontinuous penalty regions directly visible.
+            </p>
+          </div>
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/bayesian-pid-optimization/pid-search-space.png"
+            alt="Three-dimensional Bayesian search space for proportional, integral and derivative gains"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="methods-title">
+        <div class="section-heading">
+          <p class="eyebrow">Methods &amp; Tools</p>
+          <h2 id="methods-title">Control, optimization and validation methods used in the project.</h2>
+        </div>
+        <ul class="method-tags" aria-label="Methods and tools">
+          <li>MATLAB</li>
+          <li>Bayesian Optimization</li>
+          <li>bayesopt</li>
+          <li>Gaussian Processes</li>
+          <li>Expected Improvement</li>
+          <li>PID Control</li>
+          <li>Robot Dynamics</li>
+          <li>Trajectory Tracking</li>
+          <li>Constraint Handling</li>
+          <li>Cost-Function Design</li>
+          <li>Sequential Optimization</li>
+          <li>RMSE &amp; R&sup2; Validation</li>
+          <li>Technical Reporting</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Francesco Sala</span>
+      <a href="../index.html#projects">Back to Projects</a>
+    </footer>
+  </body>
+</html>

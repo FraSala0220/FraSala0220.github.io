@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="LLM-assisted CNC process-planning pipeline for customized panel furniture, including Python nesting, CadQuery models, safety checks and workflow validation."
+    >
+    <title>LLM-Assisted CNC Process Planning | Francesco Sala</title>
+    <link rel="stylesheet" href="../styles.css?v=llm-cnc-project-20260716">
+  </head>
+  <body class="project-page">
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Back to Francesco Sala homepage">Francesco Sala</a>
+      <nav class="nav-links" aria-label="Project navigation">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-hero section-shell" aria-labelledby="project-title">
+        <div class="project-hero-copy">
+          <p class="eyebrow">AI-Assisted Manufacturing &middot; CNC Process Planning</p>
+          <h1 class="project-title-compact" id="project-title">LLM-Assisted CNC Process Planning</h1>
+          <p class="project-subtitle">From a natural-language furniture request to CAD, nesting and a validated CNC plan</p>
+          <p class="project-lede">
+            A modular Python pipeline combining LLM reasoning, deterministic engineering rules, CadQuery geometry,
+            panel nesting and human-in-the-loop safety checks for customized laminated-panel production.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="../index.html#projects">Back to Projects</a>
+            <a class="button secondary" href="#nesting">View Nesting</a>
+          </div>
+        </div>
+
+        <div>
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/llm-cnc-planning/wardrobe-nesting.png"
+            alt="Python-generated nesting layout for nine wardrobe panels on a raw sheet"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-overview" aria-labelledby="project-overview-title">
+        <div class="section-heading">
+          <h2 id="project-overview-title">Overview</h2>
+        </div>
+        <div class="project-overview-grid">
+          <article class="project-overview-card">
+            <h3>Engineering Challenge</h3>
+            <p>
+              Translate an unstructured customer request into reliable manufacturing data: furniture dimensions,
+              module allocation, panel lists, CAD geometry, efficient raw-sheet layouts and safe CNC operations.
+            </p>
+          </article>
+
+          <article class="project-overview-card">
+            <h3>My Contribution</h3>
+            <ul>
+              <li>Developed the Python code for panel nesting and layout generation.</li>
+              <li>Validated the remaining LLM, CAD and CNC-planning workflow.</li>
+              <li>Checked outputs against dimensional, manufacturing and safety constraints.</li>
+              <li>Wrote the technical report and documented the validation results.</li>
+            </ul>
+          </article>
+
+          <article class="project-overview-card project-overview-card-outcome">
+            <h3>Outcome</h3>
+            <ul>
+              <li>100% dimensional-parsing accuracy across ten test cases.</li>
+              <li>95.7% panel-list accuracy.</li>
+              <li>90% CNC-plan accuracy.</li>
+              <li>All 20 panels nested in the complete wardrobe example.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-facts" aria-label="Project summary">
+        <dl class="project-info-grid">
+          <div>
+            <dt>Role</dt>
+            <dd>Nesting Code &middot; Workflow Validation &middot; Technical Report</dd>
+          </div>
+          <div>
+            <dt>Team</dt>
+            <dd>3 students &middot; 2024&ndash;2025</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>Python &middot; OpenAI API &middot; CadQuery &middot; Google Colab</dd>
+          </div>
+          <div class="project-outcome-card">
+            <dt>Validation</dt>
+            <dd>100% &middot; 95.7% &middot; 90%</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="challenge-title">
+        <div class="section-heading">
+          <p class="eyebrow">The Challenge</p>
+          <h2 id="challenge-title">Convert design intent into production-ready data without treating the LLM as an unchecked authority.</h2>
+        </div>
+        <div class="project-text">
+          <p>
+            The use case focuses on customized bookshelves, wardrobes, display cases and TV stands manufactured from
+            laminated panels. A customer specifies overall dimensions and intended contents in natural language; the
+            system must then derive every panel and machining operation required for production.
+          </p>
+          <p>
+            Reliability is maintained by separating language interpretation from deterministic calculations, nesting
+            and parameter checks. CAD previews and operator confirmations are inserted before irreversible production
+            decisions, keeping human judgment inside the automated workflow.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="pipeline-title">
+        <div class="section-heading">
+          <p class="eyebrow">Modular Pipeline</p>
+          <h2 id="pipeline-title">Three connected blocks progressively transform text into a CNC process plan.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <div>
+              <p class="tag">Block 1</p>
+              <h3>Interpret requirements</h3>
+            </div>
+            <ul class="project-list">
+              <li>Extract height, width, depth and furniture contents</li>
+              <li>Compute modules, clear zones and shelf allocation</li>
+              <li>Export structured dimensional CSV tables</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Block 2</p>
+              <h3>Generate panels and CAD</h3>
+            </div>
+            <ul class="project-list">
+              <li>Create the complete panel bill of materials</li>
+              <li>Generate an assembled CadQuery model and STL file</li>
+              <li>Request user approval before process planning</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Block 3A</p>
+              <h3>Nest panels on raw sheets</h3>
+            </div>
+            <ul class="project-list">
+              <li>Separate panels by material thickness</li>
+              <li>Compute placement coordinates and sheet usage</li>
+              <li>Export layouts and manufacturing CSV files</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Block 3B</p>
+              <h3>Generate and validate the CNC plan</h3>
+            </div>
+            <ul class="project-list">
+              <li>Select tools, speeds, feeds and operation sequence</li>
+              <li>Estimate machining and handling time</li>
+              <li>Run automated limits and operator review</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" id="nesting" aria-labelledby="nesting-title">
+        <div class="section-heading">
+          <p class="eyebrow">My Core Development</p>
+          <h2 id="nesting-title">The Python nesting code converts the panel list into thickness-specific sheet layouts.</h2>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              The nesting step receives the panel bill of materials generated upstream, separates components according
+              to thickness and places them within the available raw-sheet dimensions. Each output records panel
+              identifiers and coordinates so the geometry can feed the following cutting-plan stage.
+            </p>
+            <p>
+              In the complete wardrobe example, the code placed <strong>20 of 20 panels</strong> across four
+              3050 &times; 2070 mm sheets. Total material utilization reached <strong>67.06%</strong>, with the three
+              most populated sheets individually reaching 76.43%, 83.18% and 81.47% efficiency.
+            </p>
+          </div>
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/llm-cnc-planning/wardrobe-nesting.png"
+            alt="Nesting layout placing nine wardrobe panels on a raw laminated sheet"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="nesting-output-title">
+        <div class="section-heading">
+          <p class="eyebrow">Nesting Outputs</p>
+          <h2 id="nesting-output-title">Independent layouts keep backing and structural panels separated by thickness.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/llm-cnc-planning/nesting-backing-sheet.png"
+              alt="Nesting layout for the thin furniture backing panel"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">0.4 cm Sheet</p>
+              <h3>Backing panel layout</h3>
+            </div>
+          </article>
+
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/llm-cnc-planning/nesting-panel-sheet-1.png"
+              alt="First nesting layout for 2 cm structural furniture panels"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">2.0 cm Sheet 1</p>
+              <h3>Nine structural panels placed</h3>
+            </div>
+          </article>
+
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/llm-cnc-planning/nesting-panel-sheet-2.png"
+              alt="Second nesting layout for 2 cm structural furniture panels"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">2.0 cm Sheet 2</p>
+              <h3>Remaining six panels placed</h3>
+            </div>
+          </article>
+
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/llm-cnc-planning/generated-project-files.png"
+              alt="Automatically generated project folder with CAD, nesting and CNC CSV files"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">Project Export</p>
+              <h3>CAD, nesting and CNC files collected automatically</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="validation-title">
+        <div class="section-heading">
+          <p class="eyebrow">Workflow Validation</p>
+          <h2 id="validation-title">Ten different requests exposed both the strong stages and the remaining failure modes.</h2>
+        </div>
+        <div class="metric-row" aria-label="Validation accuracy">
+          <div>
+            <strong>100%</strong>
+            <span>Dimension extraction</span>
+          </div>
+          <div>
+            <strong>95.7%</strong>
+            <span>Panel-list accuracy</span>
+          </div>
+          <div>
+            <strong>90%</strong>
+            <span>CNC-plan accuracy</span>
+          </div>
+          <div>
+            <strong>80%</strong>
+            <span>Timing estimates within &plusmn;5%</span>
+          </div>
+        </div>
+        <div class="project-text">
+          <p>
+            Validation covered wardrobes, bookshelves, cabinets, TV stands, shoe racks, display cases, pantry units
+            and sideboards. The checks separated dimensional parsing, panel computation, operation count, tool
+            selection, machining parameters and timing accuracy instead of compressing performance into one score.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="cad-title">
+        <div class="section-heading">
+          <p class="eyebrow">CAD Validation</p>
+          <h2 id="cad-title">Generated assemblies were visually reviewed before nesting and CNC planning.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/llm-cnc-planning/wardrobe-cad.png"
+              alt="Generated CAD model of a customized three-module wardrobe"
+              loading="lazy"
+            >
+            <div><p class="tag">Wardrobe</p><h3>Mixed storage requirements</h3></div>
+          </article>
+
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/llm-cnc-planning/display-case-cad.png"
+              alt="Generated CAD model of a two-module display case"
+              loading="lazy"
+            >
+            <div><p class="tag">Display Case</p><h3>Desktop-application test</h3></div>
+          </article>
+
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/llm-cnc-planning/custom-cabinet-cad.png"
+              alt="Generated CAD model of a custom cabinet"
+              loading="lazy"
+            >
+            <div><p class="tag">Custom Cabinet</p><h3>Reserved vertical storage zone</h3></div>
+          </article>
+
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/llm-cnc-planning/tv-stand-cad.png"
+              alt="Generated CAD model of a low TV stand"
+              loading="lazy"
+            >
+            <div><p class="tag">TV Stand</p><h3>Low-profile furniture case</h3></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="safety-title">
+        <div class="section-heading">
+          <p class="eyebrow">Safety &amp; Human Oversight</p>
+          <h2 id="safety-title">Automated checks stop unsafe parameters; operators retain the final decision.</h2>
+        </div>
+        <div class="project-text">
+          <p>
+            Spindle speed, feed rate, cutting depth and operation quantities are compared programmatically with the
+            limits associated with each tool. A violation produces a warning before any data can reach the machine.
+          </p>
+          <p>
+            If the automated checks pass, the operator reviews both the detailed CNC table and the aggregated time
+            estimate, then explicitly chooses whether to proceed or abort. This makes the LLM an engineering assistant
+            inside a controlled process rather than an autonomous machine controller.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="methods-title">
+        <div class="section-heading">
+          <p class="eyebrow">Methods &amp; Tools</p>
+          <h2 id="methods-title">Methods used from natural-language input to validated production files.</h2>
+        </div>
+        <ul class="method-tags" aria-label="Methods and tools">
+          <li>Python</li>
+          <li>OpenAI API</li>
+          <li>Google Colab</li>
+          <li>CadQuery</li>
+          <li>Prompt Engineering</li>
+          <li>Panel Nesting</li>
+          <li>2D Packing</li>
+          <li>CNC Process Planning</li>
+          <li>CSV Data Pipelines</li>
+          <li>CAD Automation</li>
+          <li>Safety Validation</li>
+          <li>Human-in-the-Loop Review</li>
+          <li>Test-Case Design</li>
+          <li>Technical Reporting</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Francesco Sala</span>
+      <a href="../index.html#projects">Back to Projects</a>
+    </footer>
+  </body>
+</html>

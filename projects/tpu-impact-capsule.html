@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="3D-printed TPU impact capsule project by Francesco Sala, developed through CAD, DfAM and iterative drop testing."
+    >
+    <title>3D-Printed TPU Impact Capsule | Francesco Sala</title>
+    <link rel="stylesheet" href="../styles.css?v=tpu-impact-capsule-20260716d">
+  </head>
+  <body class="project-page">
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Back to Francesco Sala homepage">Francesco Sala</a>
+      <nav class="nav-links" aria-label="Project navigation">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-hero section-shell" aria-labelledby="project-title">
+        <div class="project-hero-copy">
+          <p class="eyebrow">Additive Manufacturing &middot; DfAM</p>
+          <h1 class="project-title-compact" id="project-title">3D-Printed TPU Impact Capsule</h1>
+          <p class="project-subtitle">From a rocket-inspired concept to a 10.3 g competition prototype</p>
+          <p class="project-lede">
+            A four-person design-build-test project focused on protecting a fragile glass ornament during repeated
+            drops, while minimizing capsule mass and FDM printing time.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="../index.html#projects">Back to Projects</a>
+            <a class="button secondary" href="#concepts">View Concepts</a>
+          </div>
+        </div>
+
+        <div>
+          <img
+            class="project-image project-image-hero project-image-contain"
+            src="../assets/images/tpu-capsule/rocket-concept.png"
+            alt="CAD render of the rocket-shaped TPU capsule concept"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-overview" aria-labelledby="project-overview-title">
+        <div class="section-heading">
+          <h2 id="project-overview-title">Overview</h2>
+        </div>
+        <div class="project-overview-grid">
+          <article class="project-overview-card">
+            <h3>Engineering Challenge</h3>
+            <p>
+              Design and print a TPU 95A capsule that protects a 40 mm glass ornament in drops above 4 m, using no
+              adhesives or external damping materials while minimizing mass and build time.
+            </p>
+          </article>
+
+          <article class="project-overview-card">
+            <h3>My Contribution</h3>
+            <ul>
+              <li>Developed CAD concepts and geometry iterations.</li>
+              <li>Contributed to brainstorming and concept development.</li>
+              <li>Prepared the project report.</li>
+              <li>Followed the 3D-printing and prototype-testing sessions.</li>
+            </ul>
+          </article>
+
+          <article class="project-overview-card project-overview-card-outcome">
+            <h3>Outcome</h3>
+            <ul>
+              <li>Top 5 result in the technical challenge.</li>
+              <li>3rd place in the design ranking.</li>
+              <li>Three successful final drops with the glass ornament intact.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-facts" aria-label="Project summary">
+        <dl class="project-info-grid">
+          <div>
+            <dt>Role</dt>
+            <dd>CAD &middot; Brainstorming &middot; Report &middot; Print Follow-Up</dd>
+          </div>
+          <div>
+            <dt>Team</dt>
+            <dd>4 students &middot; 2025&ndash;2026</dd>
+          </div>
+          <div>
+            <dt>Process</dt>
+            <dd>TPU 95A &middot; FDM &middot; BambuLab X1 Carbon</dd>
+          </div>
+          <div class="project-outcome-card">
+            <dt>Final Prototype</dt>
+            <dd>10.3 g &middot; 1 h 10 min</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="challenge-title">
+        <div class="section-heading">
+          <p class="eyebrow">The Challenge</p>
+          <h2 id="challenge-title">Balance impact protection, low mass and fast printing in one flexible part.</h2>
+        </div>
+        <div class="project-text">
+          <p>
+            The capsule had to protect a fragile 40 mm glass Christmas ball during vertical drops exceeding 4 m. Ball
+            integrity represented 50% of the competition score, with capsule mass and G-code printing time contributing
+            25% each.
+          </p>
+          <p>
+            The design space was deliberately constrained: TPU was the only permitted material, external dampers and
+            adhesives were prohibited, the build volume was limited to 200 &times; 200 &times; 200 mm, and each part had to
+            print in under six hours.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" id="concepts" aria-labelledby="concepts-title">
+        <div class="section-heading">
+          <p class="eyebrow">Concept Exploration</p>
+          <h2 id="concepts-title">Two expressive concepts explored different ways to control the fall.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/tpu-capsule/rocket-concept.png"
+              alt="Rocket-shaped capsule CAD concept"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">Rocket Concept</p>
+              <h3>A stable, support-free impact shell</h3>
+              <ul class="project-list">
+                <li>Fins and pointed nose inspired by space capsules</li>
+                <li>Vertical build orientation with overhangs below 45 degrees</li>
+                <li>Integrated flexible snap-fit for ball insertion</li>
+                <li>Validated the protection principle but remained heavy and slow</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/tpu-capsule/samara-concept.png"
+              alt="Samara seed-inspired capsule CAD concept"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">Samara Concept</p>
+              <h3>Use drag and autorotation to reduce impact speed</h3>
+              <ul class="project-list">
+                <li>Biomimetic geometry inspired by winged samara seeds</li>
+                <li>Large surface intended to promote drag and autorotation</li>
+                <li>Visually distinctive integration of payload and wing</li>
+                <li>Not pursued due to print time, robustness and impact-orientation sensitivity</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="development-title">
+        <div class="section-heading">
+          <p class="eyebrow">Iterative Development</p>
+          <h2 id="development-title">The Rocket established the principle; the Hourglass removed everything unnecessary.</h2>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              The first Rocket prototype successfully protected the ornament and confirmed the monolithic snap-fit
+              strategy. At 21.05 g and 2 h 30 min, however, its fins and pointed body imposed an avoidable mass and time
+              penalty.
+            </p>
+            <p>
+              The concept evolved into an axisymmetric Hourglass with two flared impact zones and a protected central
+              cavity. Continuous circular toolpaths improved print consistency, while the flexible double-undercut
+              snap-fit retained the ornament without a separate closure.
+            </p>
+            <p>
+              Each printed configuration was repeatedly drop-tested. Wall thickness, slots and a Voronoi-style shell
+              were compared; the reduced-wall Variant A was selected because it preserved reliable protection while
+              cutting both mass and printing time.
+            </p>
+          </div>
+          <div class="project-media-stack">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/tpu-capsule/rocket-prototype.png"
+              alt="First 3D-printed rocket capsule prototype"
+              loading="lazy"
+            >
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/tpu-capsule/hourglass-cad.png"
+              alt="CAD render of the optimized hourglass capsule"
+              loading="lazy"
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="outcome-title">
+        <div class="section-heading">
+          <p class="eyebrow">Final Prototype</p>
+          <h2 id="outcome-title">10.3 g, 1 h 10 min and a perfect competition drop record.</h2>
+        </div>
+        <div class="project-two-column">
+          <div>
+            <div class="generation-grid">
+              <article class="generation-card">
+                <div>
+                  <p class="tag">Mass</p>
+                  <h3>10.3 g</h3>
+                </div>
+                <ul class="project-list">
+                  <li class="highlight-improvement">51.1% lower than the initial Rocket</li>
+                  <li>Official competition measurement</li>
+                </ul>
+              </article>
+              <article class="generation-card">
+                <div>
+                  <p class="tag">Print Time</p>
+                  <h3>1 h 10 min</h3>
+                </div>
+                <ul class="project-list">
+                  <li class="highlight-improvement">53.4% shorter than the initial Rocket</li>
+                  <li>Support-free TPU build</li>
+                </ul>
+              </article>
+            </div>
+            <div class="project-text">
+              <p>
+                The final capsule completed all three competition drops with the glass ornament intact. The team
+                finished in the technical Top 5 and placed 3rd in the design ranking.
+              </p>
+            </div>
+          </div>
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/tpu-capsule/final-hourglass-prototype.png"
+            alt="Final black TPU hourglass prototype holding the glass ornament"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="methods-title">
+        <div class="section-heading">
+          <p class="eyebrow">Methods &amp; Tools</p>
+          <h2 id="methods-title">Methods used from ideation to competition validation.</h2>
+        </div>
+        <ul class="method-tags" aria-label="Methods and tools">
+          <li>CAD</li>
+          <li>Brainstorming</li>
+          <li>Concept Screening</li>
+          <li>Design for Additive Manufacturing</li>
+          <li>FDM</li>
+          <li>TPU 95A</li>
+          <li>Bambu Studio</li>
+          <li>BambuLab X1 Carbon</li>
+          <li>Support-Free Design</li>
+          <li>Print Orientation</li>
+          <li>Flexible Snap-Fit</li>
+          <li>Iterative Prototyping</li>
+          <li>Drop Testing</li>
+          <li>Technical Reporting</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Francesco Sala</span>
+      <a href="../index.html#projects">Back to Projects</a>
+    </footer>
+  </body>
+</html>

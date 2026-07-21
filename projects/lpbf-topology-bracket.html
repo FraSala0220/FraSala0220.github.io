@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Topology-optimized LPBF machine-arm bracket project by Francesco Sala, developed through iterative Abaqus redesign and powder-bed print preparation."
+    >
+    <title>Topology-Optimized LPBF Bracket | Francesco Sala</title>
+    <link rel="stylesheet" href="../styles.css?v=lpbf-bracket-20260716">
+  </head>
+  <body class="project-page">
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Back to Francesco Sala homepage">Francesco Sala</a>
+      <nav class="nav-links" aria-label="Project navigation">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-hero section-shell" aria-labelledby="project-title">
+        <div class="project-hero-copy">
+          <p class="eyebrow">Additive Manufacturing &middot; Topology Optimization</p>
+          <h1 class="project-title-compact" id="project-title">Topology-Optimized LPBF Bracket</h1>
+          <p class="project-subtitle">A 2 kg machine-arm bracket redesigned into a 202 g powder-bed-ready structure</p>
+          <p class="project-lede">
+            A four-person additive-manufacturing project combining load-path-driven topology optimization, iterative
+            geometric redesign and LPBF process preparation for a moving-machine component.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="../index.html#projects">Back to Projects</a>
+            <a class="button secondary" href="#iterations">View Iterations</a>
+          </div>
+        </div>
+
+        <div>
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/lpbf-bracket/final-bracket.png"
+            alt="Final metallic render of the topology-optimized LPBF bracket"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-overview" aria-labelledby="project-overview-title">
+        <div class="section-heading">
+          <h2 id="project-overview-title">Overview</h2>
+        </div>
+        <div class="project-overview-grid">
+          <article class="project-overview-card">
+            <h3>Engineering Challenge</h3>
+            <p>
+              Redesign a 2 kg aluminium bracket supporting a 3 kg sensor and motor assembly, preserving its functional
+              interfaces while meeting stiffness, vibration and LPBF manufacturability constraints.
+            </p>
+          </article>
+
+          <article class="project-overview-card">
+            <h3>My Contribution</h3>
+            <ul>
+              <li>Developed the topology-driven design through four optimization&ndash;redesign iterations.</li>
+              <li>Refined load paths, section continuity and manufacturable geometry.</li>
+              <li>Contributed to the powder-bed print setup and followed the SLS/LPBF printing phase.</li>
+            </ul>
+          </article>
+
+          <article class="project-overview-card project-overview-card-outcome">
+            <h3>Outcome</h3>
+            <ul>
+              <li>202 g final mass, approximately 90% below the original bracket.</li>
+              <li>Lightest arm developed in the challenge.</li>
+              <li>Structural and dynamic requirements satisfied.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-facts" aria-label="Project summary">
+        <dl class="project-info-grid">
+          <div>
+            <dt>Role</dt>
+            <dd>Topology Design &middot; Iterative Redesign &middot; Powder-Bed Printing</dd>
+          </div>
+          <div>
+            <dt>Team</dt>
+            <dd>4 students &middot; 2025&ndash;2026</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>Abaqus &middot; Altair Inspire &middot; PolyNURBS</dd>
+          </div>
+          <div class="project-outcome-card">
+            <dt>Outcome</dt>
+            <dd>202 g &middot; Lightest in Challenge</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="challenge-title">
+        <div class="section-heading">
+          <p class="eyebrow">The Challenge</p>
+          <h2 id="challenge-title">Remove 90% of the mass without losing stiffness, stability or printability.</h2>
+        </div>
+        <div class="project-text">
+          <p>
+            The original Aluminum 6061-T6 bracket is mounted on the moving arm of an LPBF machine and carries a 3 kg
+            monitoring sensor and motor. Its conservative geometry weighed approximately 2 kg and offered substantial
+            potential for structural efficiency improvements.
+          </p>
+          <p>
+            The redesign had to keep the attachment and sensor interfaces unchanged, limit maximum displacement to
+            1 mm and maintain a first natural frequency above 40 Hz. The complete part and supports also had to fit a
+            250 &times; 250 &times; 300 mm build volume while controlling support volume, residual stress and thermal
+            distortion.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="strategy-title">
+        <div class="section-heading">
+          <p class="eyebrow">Optimization Strategy</p>
+          <h2 id="strategy-title">Fast load-path exploration followed by controlled, aggressive mass reduction.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <div>
+              <p class="tag">Altair Inspire</p>
+              <h3>Establish the structural architecture</h3>
+            </div>
+            <ul class="project-list">
+              <li>Design and non-design regions around functional interfaces</li>
+              <li>Stiffness maximization with a 25% target mass fraction</li>
+              <li>First-mode constraint above 40 Hz</li>
+              <li>PolyNURBS reconstruction producing a conservative 577 g concept</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Abaqus</p>
+              <h3>Iterate between solver output and manufacturable geometry</h3>
+            </div>
+            <ul class="project-list">
+              <li>Compliance minimization with a 30% volume constraint</li>
+              <li>Four topology optimization and manual redesign cycles</li>
+              <li>Progressive removal of low-contribution material</li>
+              <li>Uniform sections and continuous load paths for LPBF stability</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" id="iterations" aria-labelledby="iterations-title">
+        <div class="section-heading">
+          <p class="eyebrow">Optimization &rarr; Redesign &rarr; Optimization</p>
+          <h2 id="iterations-title">Four iterations progressively revealed the final triangular load path.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/lpbf-bracket/iteration-1.png"
+              alt="First Abaqus topology optimization result"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">Iteration 1</p>
+              <h3>Identify the primary force path</h3>
+            </div>
+          </article>
+
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/lpbf-bracket/iteration-2.png"
+              alt="Second topology optimization geometry iteration"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">Iteration 2</p>
+              <h3>Refine the connection and section transitions</h3>
+            </div>
+          </article>
+
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/lpbf-bracket/iteration-3.png"
+              alt="Third Abaqus topology optimization result"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">Iteration 3</p>
+              <h3>Remove low-contribution internal material</h3>
+            </div>
+          </article>
+
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/lpbf-bracket/iteration-4.png"
+              alt="Fourth and final topology optimization result"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">Iteration 4</p>
+              <h3>Converge on the open triangular architecture</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="geometry-title">
+        <div class="section-heading">
+          <p class="eyebrow">DfAM Geometry</p>
+          <h2 id="geometry-title">The final shape follows both force flow and powder-bed manufacturing logic.</h2>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              The dominant loads produced a triangular structural architecture between the preserved mounting regions.
+              The topology result was rebuilt into smooth, continuous members with low and nearly constant wall
+              thickness, reducing thermal gradients and improving process repeatability.
+            </p>
+            <p>
+              Open U-shaped beam sections replace enclosed cavities so unused powder can be fully evacuated after the
+              build. This manufacturing-driven decision retained the efficient load path while avoiding inaccessible
+              trapped material and unnecessary post-processing.
+            </p>
+          </div>
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/lpbf-bracket/final-bracket.png"
+            alt="Final smooth triangular bracket geometry designed for powder evacuation"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="validation-title">
+        <div class="section-heading">
+          <p class="eyebrow">Structural Validation</p>
+          <h2 id="validation-title">The 202 g design remained below every imposed structural limit.</h2>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              Linear static analysis predicted a maximum displacement of approximately <strong>0.6 mm</strong>, below
+              the 1 mm limit, and a maximum von Mises stress of approximately <strong>30 MPa</strong>, well below the
+              reported 276 MPa yield strength.
+            </p>
+            <p>
+              Modal analysis placed the first natural frequency at <strong>68.2 Hz</strong>, exceeding the 40 Hz
+              requirement. The second mode was located at 529.4 Hz.
+            </p>
+          </div>
+          <div class="project-media-stack">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/lpbf-bracket/displacement-analysis.png"
+              alt="Abaqus displacement result for the final bracket"
+              loading="lazy"
+            >
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/lpbf-bracket/stress-analysis.png"
+              alt="Abaqus von Mises stress result for the final bracket"
+              loading="lazy"
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="printing-title">
+        <div class="section-heading">
+          <p class="eyebrow">Powder-Bed Printing</p>
+          <h2 id="printing-title">Build orientation and supports were refined around distortion control.</h2>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              Automatic orientation proposals were screened against the available build zone and manufacturing
+              constraints. A manual orientation was then selected to reduce springback and printing-induced
+              deformation while keeping the part stable inside the LPBF volume.
+            </p>
+            <p>
+              Automatically generated supports were manually refined to improve heat transfer and reinforce slender
+              regions without adding unnecessary material. The supported-process simulation predicted approximately
+              1 mm maximum print-induced displacement, with residual stresses remaining below yield.
+            </p>
+          </div>
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/lpbf-bracket/lpbf-supports.png"
+            alt="LPBF build simulation showing the optimized bracket and support structures"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="outcome-title">
+        <div class="section-heading">
+          <p class="eyebrow">Outcome</p>
+          <h2 id="outcome-title">The lightest arm in the challenge at 202 g.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <div>
+              <p class="tag">Mass</p>
+              <h3>2,000 g &rarr; 202 g</h3>
+            </div>
+            <ul class="project-list">
+              <li class="highlight-improvement">Approximately 90% mass reduction</li>
+              <li>161 g design region and 51 g preserved interfaces</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Requirements</p>
+              <h3>All structural targets met</h3>
+            </div>
+            <ul class="project-list">
+              <li>0.6 mm maximum operational displacement</li>
+              <li>Approximately 30 MPa maximum stress</li>
+              <li>68.2 Hz first natural frequency</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="methods-title">
+        <div class="section-heading">
+          <p class="eyebrow">Methods &amp; Tools</p>
+          <h2 id="methods-title">Methods used from design-space definition to print preparation.</h2>
+        </div>
+        <ul class="method-tags" aria-label="Methods and tools">
+          <li>Abaqus</li>
+          <li>Altair Inspire</li>
+          <li>PolyNURBS</li>
+          <li>Topology Optimization</li>
+          <li>Compliance Minimization</li>
+          <li>Iterative Redesign</li>
+          <li>Static FEA</li>
+          <li>Modal Analysis</li>
+          <li>Design for Additive Manufacturing</li>
+          <li>SLS / LPBF</li>
+          <li>Build Orientation</li>
+          <li>Support Optimization</li>
+          <li>Residual Stress Analysis</li>
+          <li>Powder Evacuation Design</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Francesco Sala</span>
+      <a href="../index.html#projects">Back to Projects</a>
+    </footer>
+  </body>
+</html>

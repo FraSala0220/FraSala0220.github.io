@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="CFD study of laminar and turbulent flow through a 2D converging nozzle, including mesh refinement and wall-resolved OpenFOAM simulations."
+    >
+    <title>Converging Nozzle CFD | Francesco Sala</title>
+    <link rel="stylesheet" href="../styles.css?v=cfd-projects-20260716b">
+  </head>
+  <body class="project-page">
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Back to Francesco Sala homepage">Francesco Sala</a>
+      <nav class="nav-links" aria-label="Project navigation">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-hero section-shell" aria-labelledby="project-title">
+        <div class="project-hero-copy">
+          <p class="eyebrow">Computational Fluid Dynamics &middot; Internal Flow</p>
+          <h1 class="project-title-compact" id="project-title">Converging Nozzle CFD</h1>
+          <p class="project-subtitle">Laminar, turbulent and wall-resolved analysis of a two-dimensional contraction</p>
+          <p class="project-lede">
+            An OpenFOAM study connecting mesh design, turbulence modelling and near-wall resolution to pressure,
+            velocity, flow-rate and wall-shear predictions.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="../index.html#projects">Back to Projects</a>
+            <a class="button secondary" href="#results">View Results</a>
+          </div>
+        </div>
+
+        <div>
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/cfd-nozzle/velocity-field.png"
+            alt="Velocity magnitude field through the two-dimensional converging nozzle"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-overview" aria-labelledby="project-overview-title">
+        <div class="section-heading">
+          <h2 id="project-overview-title">Overview</h2>
+        </div>
+        <div class="project-overview-grid">
+          <article class="project-overview-card">
+            <h3>Engineering Challenge</h3>
+            <p>
+              Build a reliable CFD model of a 2D converging nozzle, quantify mesh sensitivity and compare laminar,
+              wall-function and wall-resolved turbulent predictions against ideal flow behaviour.
+            </p>
+          </article>
+
+          <article class="project-overview-card">
+            <h3>My Contribution</h3>
+            <ul>
+              <li>Worked across domain definition, block-structured meshing and refinement studies.</li>
+              <li>Set up boundary conditions, numerical schemes, solvers and turbulence models.</li>
+              <li>Post-processed convergence, flow rate, pressure, velocity and wall-shear results.</li>
+              <li>Contributed to result interpretation, MATLAB plots and technical reporting.</li>
+            </ul>
+          </article>
+
+          <article class="project-overview-card project-overview-card-outcome">
+            <h3>Outcome</h3>
+            <ul>
+              <li>1.75 m&sup3;/s turbulent volumetric flow rate against 1.83 m&sup3;/s ideal.</li>
+              <li>Flow-rate KPI of 1.04.</li>
+              <li>Average y+ of 0.28 in the wall-resolved model.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-facts" aria-label="Project summary">
+        <dl class="project-info-grid">
+          <div>
+            <dt>Role</dt>
+            <dd>CFD Modelling &middot; Meshing &middot; Post-Processing &middot; Reporting</dd>
+          </div>
+          <div>
+            <dt>Context</dt>
+            <dd>Group Project &middot; 2024&ndash;2025</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>OpenFOAM &middot; blockMesh &middot; MATLAB</dd>
+          </div>
+          <div class="project-outcome-card">
+            <dt>Outcome</dt>
+            <dd>1.75 m&sup3;/s &middot; KPI 1.04</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="challenge-title">
+        <div class="section-heading">
+          <p class="eyebrow">The Challenge</p>
+          <h2 id="challenge-title">Resolve the contraction and its boundary layers without confusing numerical artifacts with flow physics.</h2>
+        </div>
+        <div class="project-text">
+          <p>
+            The 2.5 m nozzle contracts from a 0.25 m inlet height to a 0.125 m outlet height. Its computational domain
+            was divided into inlet, converging and outlet blocks to control cell distribution and maintain smooth
+            transitions across the complete internal-flow path.
+          </p>
+          <p>
+            The expected acceleration and static-pressure reduction provided a theoretical reference, while mesh
+            refinement, residual histories and outlet profiles were used to establish whether each numerical result
+            was stable and physically credible.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="models-title">
+        <div class="section-heading">
+          <p class="eyebrow">Simulation Architecture</p>
+          <h2 id="models-title">Three modelling levels separated mesh effects from turbulence and near-wall treatment.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <div>
+              <p class="tag">Laminar</p>
+              <h3>Progressive mesh refinement</h3>
+            </div>
+            <ul class="project-list">
+              <li>Three structured meshes from 30 &times; 15 to 150 &times; 45 cells per main block</li>
+              <li>Pressure and velocity convergence threshold of 10<sup>&minus;6</sup></li>
+              <li>Outlet-profile and ideal-flow comparison</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Turbulent</p>
+              <h3>Wall functions versus wall resolution</h3>
+            </div>
+            <ul class="project-list">
+              <li>k&ndash;&omega; SST turbulence modelling</li>
+              <li>Three wall-function meshes followed by one wall-resolved mesh</li>
+              <li>Direct comparison of velocity gradients and wall shear stress</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="mesh-title">
+        <div class="section-heading">
+          <p class="eyebrow">Near-Wall Resolution</p>
+          <h2 id="mesh-title">An 800 &times; 190 wall-resolved mesh brought the complete viscous sublayer into the solution.</h2>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              The final three-block turbulent mesh used a grading factor of 200 to concentrate centroids near both
+              walls. It achieved y+ values from <strong>0.11</strong> to <strong>0.93</strong>, with an average of
+              <strong>0.28</strong>.
+            </p>
+            <p>
+              This resolved the no-slip condition more faithfully and captured higher near-wall shear peaks than the
+              wall-function cases, while leaving the global pressure and velocity trends substantially unchanged.
+            </p>
+          </div>
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/cfd-nozzle/wall-resolved-mesh.png"
+            alt="Highly graded structured mesh for the wall-resolved nozzle simulation"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-section" id="results" aria-labelledby="results-title">
+        <div class="section-heading">
+          <p class="eyebrow">Flow Results</p>
+          <h2 id="results-title">The CFD fields reproduce the expected pressure-to-velocity conversion through the contraction.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/cfd-nozzle/pressure-field.png"
+              alt="Static-pressure field decreasing through the nozzle"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">Pressure</p>
+              <h3>Static pressure falls to zero gauge at the outlet</h3>
+            </div>
+          </article>
+
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/cfd-nozzle/velocity-field.png"
+              alt="Velocity field accelerating through the converging nozzle"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">Velocity</p>
+              <h3>The core flow accelerates to approximately 14.7 m/s</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="validation-title">
+        <div class="section-heading">
+          <p class="eyebrow">Validation &amp; Interpretation</p>
+          <h2 id="validation-title">Convergence, flow rate and wall quantities were checked together.</h2>
+        </div>
+        <div class="project-media-stack">
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/cfd-nozzle/convergence.png"
+            alt="Residual history of the wall-resolved nozzle simulation"
+            loading="lazy"
+          >
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/cfd-nozzle/total-pressure.png"
+            alt="Static and total pressure trends along the converging nozzle"
+            loading="lazy"
+          >
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/cfd-nozzle/wall-shear.png"
+            alt="Wall shear stress along the converging nozzle"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="outcome-title">
+        <div class="section-heading">
+          <p class="eyebrow">Outcome</p>
+          <h2 id="outcome-title">The turbulent prediction reached 95.6% of the ideal volumetric flow rate.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <div>
+              <p class="tag">Flow Rate</p>
+              <h3>1.83 &rarr; 1.75 m&sup3;/s</h3>
+            </div>
+            <ul class="project-list">
+              <li>Ideal versus simulated turbulent flow rate</li>
+              <li>Ideal-to-real KPI equal to 1.04</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Wall Resolution</p>
+              <h3>Average y+ = 0.28</h3>
+            </div>
+            <ul class="project-list">
+              <li>Viscous sublayer directly resolved</li>
+              <li>Improved no-slip and wall-shear prediction</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="methods-title">
+        <div class="section-heading">
+          <p class="eyebrow">Methods &amp; Tools</p>
+          <h2 id="methods-title">Methods used from domain definition to result validation.</h2>
+        </div>
+        <ul class="method-tags" aria-label="Methods and tools">
+          <li>OpenFOAM</li>
+          <li>blockMesh</li>
+          <li>MATLAB</li>
+          <li>Computational Fluid Dynamics</li>
+          <li>Structured Meshing</li>
+          <li>Mesh Refinement</li>
+          <li>k&ndash;&omega; SST</li>
+          <li>Wall Functions</li>
+          <li>Wall-Resolved CFD</li>
+          <li>y+ Assessment</li>
+          <li>SIMPLE</li>
+          <li>Residual Monitoring</li>
+          <li>Flow-Rate Validation</li>
+          <li>Technical Reporting</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Francesco Sala</span>
+      <a href="../index.html#projects">Back to Projects</a>
+    </footer>
+  </body>
+</html>

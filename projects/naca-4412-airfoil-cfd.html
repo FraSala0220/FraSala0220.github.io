@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="OpenFOAM CFD study of turbulent flow around a NACA 4412 airfoil, including turbulence-model, mesh-independence and wall-resolution comparisons."
+    >
+    <title>NACA 4412 Airfoil CFD | Francesco Sala</title>
+    <link rel="stylesheet" href="../styles.css?v=cfd-projects-20260716b">
+  </head>
+  <body class="project-page">
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Back to Francesco Sala homepage">Francesco Sala</a>
+      <nav class="nav-links" aria-label="Project navigation">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-hero section-shell" aria-labelledby="project-title">
+        <div class="project-hero-copy">
+          <p class="eyebrow">Computational Fluid Dynamics &middot; External Aerodynamics</p>
+          <h1 class="project-title-compact" id="project-title">NACA 4412 Airfoil CFD</h1>
+          <p class="project-subtitle">Turbulence-model and near-wall comparison around a cambered airfoil</p>
+          <p class="project-lede">
+            A mesh-independence and turbulence-modelling study using Spalart&ndash;Allmaras and k&ndash;&epsilon; models,
+            followed by a wall-resolved simulation of pressure, wake and aerodynamic coefficients.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="../index.html#projects">Back to Projects</a>
+            <a class="button secondary" href="#results">View Results</a>
+          </div>
+        </div>
+
+        <div>
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/cfd-airfoil/velocity-field.png"
+            alt="Velocity magnitude field around the NACA 4412 airfoil"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-overview" aria-labelledby="project-overview-title">
+        <div class="section-heading">
+          <h2 id="project-overview-title">Overview</h2>
+        </div>
+        <div class="project-overview-grid">
+          <article class="project-overview-card">
+            <h3>Engineering Challenge</h3>
+            <p>
+              Predict turbulent flow around a NACA 4412 profile while quantifying the influence of mesh refinement,
+              turbulence model and near-wall treatment on wake behaviour and aerodynamic coefficients.
+            </p>
+          </article>
+
+          <article class="project-overview-card">
+            <h3>My Contribution</h3>
+            <ul>
+              <li>Worked across far-field definition, block topology and airfoil mesh refinement.</li>
+              <li>Configured boundary conditions, numerical schemes and turbulence models.</li>
+              <li>Ran mesh-independence and wall-function versus wall-resolved comparisons.</li>
+              <li>Post-processed pressure, velocity, wake, y+, shear and aerodynamic coefficients.</li>
+              <li>Contributed to MATLAB analysis, result interpretation and technical reporting.</li>
+            </ul>
+          </article>
+
+          <article class="project-overview-card project-overview-card-outcome">
+            <h3>Outcome</h3>
+            <ul>
+              <li>Wall-resolved Spalart&ndash;Allmaras model with average y+ of 0.986.</li>
+              <li>Lift coefficient Cl = 0.405.</li>
+              <li>Drag coefficient Cd = 0.02314.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-facts" aria-label="Project summary">
+        <dl class="project-info-grid">
+          <div>
+            <dt>Role</dt>
+            <dd>CFD Modelling &middot; Meshing &middot; Post-Processing &middot; Reporting</dd>
+          </div>
+          <div>
+            <dt>Context</dt>
+            <dd>Group Project &middot; 2024&ndash;2025</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>OpenFOAM &middot; blockMesh &middot; MATLAB</dd>
+          </div>
+          <div class="project-outcome-card">
+            <dt>Outcome</dt>
+            <dd>Cl 0.405 &middot; Cd 0.02314</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="challenge-title">
+        <div class="section-heading">
+          <p class="eyebrow">The Challenge</p>
+          <h2 id="challenge-title">Keep the far field invisible while resolving pressure and shear at the profile.</h2>
+        </div>
+        <div class="project-text">
+          <p>
+            The study considers a NACA 4412 airfoil with a 0.1 m chord in a 20 m/s free stream. The external domain
+            extends approximately ten chord lengths around the profile to prevent the boundaries from disturbing the
+            local solution.
+          </p>
+          <p>
+            A six-block topology and a 200-point spline describe the cambered surface and provide controlled cell
+            alignment around the leading edge, trailing edge and wake. The primary challenge was to change resolution
+            without degrading mesh quality or near-wall consistency.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="models-title">
+        <div class="section-heading">
+          <p class="eyebrow">Turbulence Strategy</p>
+          <h2 id="models-title">Model selection and wall treatment were studied independently.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <div>
+              <p class="tag">Wall Functions</p>
+              <h3>Spalart&ndash;Allmaras and k&ndash;&epsilon;</h3>
+            </div>
+            <ul class="project-list">
+              <li>Three refinement levels for each turbulence model</li>
+              <li>Target y+ above 30 for wall-function validity</li>
+              <li>Mesh-dependence tracking through Cm, Cd and Cl</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Wall Resolved</p>
+              <h3>Spalart&ndash;Allmaras without wall functions</h3>
+            </div>
+            <ul class="project-list">
+              <li>Near-wall grading designed for y+ close to one</li>
+              <li>Direct resolution of viscous velocity gradients</li>
+              <li>Higher-fidelity wall-shear and pressure-coefficient extraction</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="mesh-title">
+        <div class="section-heading">
+          <p class="eyebrow">Mesh Independence</p>
+          <h2 id="mesh-title">Refinement reduced the rate of change in the aerodynamic coefficients.</h2>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              Three meshes were assessed for both wall-function models. Their coefficient trends showed progressively
+              smaller changes, supporting the use of the finest cases as an acceptable first approximation of a
+              mesh-independent solution.
+            </p>
+            <p>
+              The final wall-resolved mesh used up to 1,000 streamwise and 280 wall-normal cells in the principal
+              blocks. Its non-orthogonality index was 10.58 and skewness 0.795, while average y+ remained at
+              <strong>0.986</strong>.
+            </p>
+          </div>
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/cfd-airfoil/convergence.png"
+            alt="Residual convergence history for the wall-resolved Spalart-Allmaras model"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-section" id="results" aria-labelledby="results-title">
+        <div class="section-heading">
+          <p class="eyebrow">Flow Results</p>
+          <h2 id="results-title">The wall-resolved model captures acceleration over the extrados and the downstream wake deficit.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/cfd-airfoil/velocity-field.png"
+              alt="Velocity magnitude distribution around the NACA 4412 airfoil"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">Velocity</p>
+              <h3>26 m/s peak velocity over the extrados</h3>
+            </div>
+          </article>
+
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/cfd-airfoil/pressure-field.png"
+              alt="Pressure distribution around the NACA 4412 airfoil"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">Pressure</p>
+              <h3>&minus;170.47 to 256.04 Pa across the profile</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="post-title">
+        <div class="section-heading">
+          <p class="eyebrow">Post-Processing</p>
+          <h2 id="post-title">Wake, surface pressure and wall shear connect the field solution to aerodynamic performance.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/cfd-airfoil/wake-profile.png"
+              alt="Velocity distribution one chord downstream of the airfoil"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">Wake</p>
+              <h3>Velocity falls to 16.8 m/s behind the trailing edge</h3>
+            </div>
+          </article>
+
+          <article class="generation-card">
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/cfd-airfoil/pressure-distribution.png"
+              alt="Surface-pressure vectors along the NACA 4412 profile"
+              loading="lazy"
+            >
+            <div>
+              <p class="tag">Surface Pressure</p>
+              <h3>Probe data mapped along upper and lower surfaces</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="surface-title">
+        <div class="section-heading">
+          <p class="eyebrow">Near-Wall Aerodynamics</p>
+          <h2 id="surface-title">Direct wall resolution reveals the strongest gradients at the leading edge.</h2>
+        </div>
+        <div class="project-media-stack">
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/cfd-airfoil/wall-shear.png"
+            alt="Wall shear stress along the upper and lower airfoil surfaces"
+            loading="lazy"
+          >
+          <img
+            class="project-image project-image-contain"
+            src="../assets/images/cfd-airfoil/pressure-coefficient.png"
+            alt="Pressure coefficient along the upper and lower airfoil surfaces"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="outcome-title">
+        <div class="section-heading">
+          <p class="eyebrow">Outcome</p>
+          <h2 id="outcome-title">The wall-resolved solution produced a lift-to-drag ratio of approximately 17.5.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <div>
+              <p class="tag">Aerodynamic Coefficients</p>
+              <h3>Cl 0.405 &middot; Cd 0.02314</h3>
+            </div>
+            <ul class="project-list">
+              <li>Cm = 0.1923</li>
+              <li>Cl/Cd &asymp; 17.5</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Near-Wall Quality</p>
+              <h3>Average y+ = 0.986</h3>
+            </div>
+            <ul class="project-list">
+              <li>Minimum y+ = 0.226</li>
+              <li>Maximum y+ = 1.6</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="methods-title">
+        <div class="section-heading">
+          <p class="eyebrow">Methods &amp; Tools</p>
+          <h2 id="methods-title">Methods used from airfoil discretization to coefficient extraction.</h2>
+        </div>
+        <ul class="method-tags" aria-label="Methods and tools">
+          <li>OpenFOAM</li>
+          <li>blockMesh</li>
+          <li>MATLAB</li>
+          <li>External Aerodynamics</li>
+          <li>NACA 4412</li>
+          <li>Mesh Independence</li>
+          <li>Spalart&ndash;Allmaras</li>
+          <li>k&ndash;&epsilon;</li>
+          <li>Wall Functions</li>
+          <li>Wall-Resolved CFD</li>
+          <li>y+ Assessment</li>
+          <li>SIMPLE</li>
+          <li>Wake Analysis</li>
+          <li>Aerodynamic Coefficients</li>
+          <li>Technical Reporting</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Francesco Sala</span>
+      <a href="../index.html#projects">Back to Projects</a>
+    </footer>
+  </body>
+</html>
