@@ -260,12 +260,12 @@ window.PORTFOLIO_DATA = {
       items: [
         {
           title: "CAD",
-          description: "CATIA V5, 3DEXPERIENCE, CadQuery (Python parametric CAD)",
+          description: "CATIA V5, 3DEXPERIENCE, CadQuery (Python parametric CAD), SolidWorks, Solid Edge, Autodesk Inventor, OnShape",
         },
         {
           title: "Simulation & Optimization",
           description:
-            "Abaqus (composite, nonlinear, buckling, cohesive damage FEA), Isight, Altair Inspire (topology optimization), OpenFOAM (CFD, turbulence modelling, mesh independence, y+ assessment), MATLAB (Bayesian optimization, PID control, Gaussian processes)",
+            "Abaqus (composite, nonlinear, buckling, cohesive damage FEA), Isight, Altair Inspire (topology optimization), OpenFOAM (CFD, turbulence modelling, mesh independence, y+ assessment), MATLAB (Bayesian optimization, PID control, Gaussian processes), Simulink, Simscape",
         },
         {
           title: "Manufacturing & DFM",
@@ -278,7 +278,7 @@ window.PORTFOLIO_DATA = {
         },
         {
           title: "AI-Assisted Engineering",
-          description: "OpenAI Codex, prompt engineering, human-in-the-loop validation for CAD and CNC automation workflows",
+          description: "OpenAI Codex, ChatGPT, Claude, Gemini, prompt engineering, human-in-the-loop validation for CAD and CNC automation workflows",
         },
         {
           title: "Product Development",
