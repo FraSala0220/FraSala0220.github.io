@@ -260,30 +260,30 @@ window.PORTFOLIO_DATA = {
       items: [
         {
           title: "CAD",
-          description: "3DEXPERIENCE, Solid Edge, Autodesk Inventor, SolidWorks, CATIA V5, OnShape, CadQuery",
+          description: "CATIA V5, 3DEXPERIENCE, CadQuery (Python parametric CAD)",
         },
         {
-          title: "Simulation",
+          title: "Simulation & Optimization",
           description:
-            "Abaqus, Isight, Composite FEA, Topology and Laminate Optimization, Cohesive Damage, Buckling, Nonlinear FEA, OpenFOAM, CFD, Turbulence Modelling, Mesh Independence, Wall-Resolved CFD, y+ Assessment, Altair, Simulink, Simscape, Bayesian Optimization, PID Control, Gaussian Processes, Constraint-Aware Optimization",
-        },
-        {
-          title: "Programming",
-          description: "Python, MATLAB, OpenAI API, CSV Data Pipelines, HTML5, CSS3, Git, GitHub",
-        },
-        {
-          title: "Product Development",
-          description:
-            "User Research, Customer Interviews, Market and Competitor Analysis, Functional Decomposition, Morphological Matrix, Concept Selection, Value Proposition, MVP Prototyping, Web App Validation, Go-to-Market, Startup Pitching, Business Model Design, Cost Estimation",
+            "Abaqus (composite, nonlinear, buckling, cohesive damage FEA), Isight, Altair Inspire (topology optimization), OpenFOAM (CFD, turbulence modelling, mesh independence, y+ assessment), MATLAB (Bayesian optimization, PID control, Gaussian processes)",
         },
         {
           title: "Manufacturing & DFM",
           description:
-            "Composite Manufacturing, Plybook Development, Sandwich Structures, Adhesive Bonding, Prepreg Autoclave, Carbon-Fiber Tooling, Mold Design, Injection Molding, CNC Process Planning, Panel Nesting, Tool and Parameter Validation, Design for Repairability, FDM, TPU 95A, Bambu Studio, Laser Powder Bed Fusion, Build Orientation, Support Optimization, Powder Evacuation Design, Snap-Fit Design",
+            "Composite lamination (prepreg autoclave, plybook development, sandwich structures, adhesive bonding), mold design, injection molding, CNC process planning and panel nesting, additive manufacturing (FDM, LPBF, build orientation and support optimization)",
         },
         {
-          title: "AI-Assisted Work",
-          description: "OpenAI Codex, ChatGPT, Claude, Gemini, LLM Process Planning, Prompt Engineering, Human-in-the-Loop Validation, Workflow Testing, debugging",
+          title: "Programming",
+          description: "Python, MATLAB, OpenAI API, Git, HTML5, CSS3",
+        },
+        {
+          title: "AI-Assisted Engineering",
+          description: "OpenAI Codex, prompt engineering, human-in-the-loop validation for CAD and CNC automation workflows",
+        },
+        {
+          title: "Product Development",
+          description:
+            "User and expert interviews, market and competitor analysis, concept selection, MVP prototyping and web-app validation, business model and cost estimation",
         },
       ],
     },
