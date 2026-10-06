@@ -1,6 +1,6 @@
 # Francesco Sala Portfolio
 
-Personal portfolio for Francesco Sala, built as a static GitHub Pages site.
+Personal portfolio for Francesco Sala, deployed as a static site on Cloudflare Workers.
 
 ## Stack
 
@@ -8,9 +8,9 @@ Personal portfolio for Francesco Sala, built as a static GitHub Pages site.
 - CSS3 for layout, responsive design, and visual style
 - Small vanilla JavaScript for lightweight interactions
 - `data.js` for editable portfolio content
-- GitHub Pages for free deployment from this repository
+- Cloudflare Workers Static Assets for deployment on `salafrancesco.com`
 
-This is the right starting point because the repository is named `FraSala0220.github.io`, so GitHub can publish the site directly without a build step.
+The site does not need compilation. The deployment script stages only the public files in `dist/`, then Cloudflare serves them as static assets from the custom domain.
 
 ## How The Site Is Organized
 
@@ -47,6 +47,40 @@ Then open:
 ```text
 http://localhost:8000
 ```
+
+## Cloudflare Deployment
+
+Install the deployment dependency once:
+
+```powershell
+npm install
+```
+
+Authenticate and deploy:
+
+```powershell
+npx wrangler login
+npm run deploy
+```
+
+The Wrangler configuration publishes the portfolio to both:
+
+- `https://salafrancesco.com`
+- `https://www.salafrancesco.com`
+
+## Google Search and Analytics
+
+The production build generates canonical links, robots directives, Open Graph and Twitter metadata, JSON-LD,
+`robots.txt`, and `sitemap.xml` for every page.
+
+Google identifiers are configured in `site-config.json`:
+
+- `googleAnalyticsId`: the GA4 web-stream Measurement ID in the `G-...` format
+- `googleSiteVerification`: the `content` value from the Search Console HTML meta-tag verification method
+
+Analytics uses basic Consent Mode v2. Google Analytics is not requested and cannot set analytics cookies before the
+visitor selects **Allow analytics**. Advertising storage, advertising user data, ad personalization, and Google signals
+remain disabled.
 
 ## Next Content To Add
 

@@ -254,8 +254,8 @@ const renderSite = () => {
   root.innerHTML = [renderHero(portfolioData.hero), ...portfolioData.sections.map(renderSection)].join("");
 
   footer.innerHTML = `
-    <span>${escapeHtml(portfolioData.site.name)}</span>
-    <span>${escapeHtml(portfolioData.site.location)}</span>
+    <span>${escapeHtml(portfolioData.site.name)} &middot; ${escapeHtml(portfolioData.site.location)}</span>
+    <a href="/privacy-cookies.html">Privacy &amp; Cookies</a>
   `;
 };
 

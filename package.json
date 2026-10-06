@@ -1,0 +1,12 @@
+{
+  "name": "francesco-sala-portfolio",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/prepare-static.mjs",
+    "dev": "wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.119.0"
+  }
+}
