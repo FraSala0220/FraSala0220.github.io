@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Five portable engineering tools for locked-down company PCs: PB Weight (composite weight estimation from 12 hours to one minute), drawing notes, airfoil meshing, a STEP viewer and DXF mirroring."
+    >
+    <title>Portable Engineering Tools @ YCOM | Francesco Sala</title>
+    <link rel="stylesheet" href="../styles.css?v=ycom-split-20261007">
+  </head>
+  <body class="project-page catia-ai-page">
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Back to Francesco Sala homepage">Francesco Sala</a>
+      <nav class="nav-links" aria-label="Project navigation">
+        <a href="ycom-internship.html">YCOM</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-hero section-shell" aria-labelledby="project-title">
+        <div class="project-hero-copy">
+          <p class="eyebrow">Engineering Automation @ YCOM &middot; 2 of 3</p>
+          <h1 class="project-title-compact" id="project-title">Portable Engineering Tools</h1>
+          <p class="project-subtitle">Copy a folder, run it, done: no installer and no admin rights</p>
+          <p class="project-lede">
+            Between a single macro and a full application sit tools that need a small interface, several files or a
+            bridge to Excel, yet still have to run on company PCs where nothing can be installed. These five tools
+            share that constraint, and PB Weight is the one with the largest impact.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#pb-weight">PB Weight</a>
+            <a class="button secondary" href="ycom-internship.html">Back to YCOM</a>
+          </div>
+        </div>
+
+        <div class="catia-ai-visual" role="img" aria-label="Portable folder containing launcher, engine, configuration and logs">
+          <div class="catia-ai-visual-topline">
+            <span>Portable &middot; Locked-down PCs</span>
+            <span>2026</span>
+          </div>
+          <div class="catia-ai-mark">5 <span>tools</span></div>
+          <div class="catia-ai-flow" aria-hidden="true">
+            <span>Launcher</span>
+            <b>&rarr;</b>
+            <span>Engine</span>
+            <b>&rarr;</b>
+            <span>Checked output</span>
+          </div>
+          <div class="catia-code-panel" aria-hidden="true">
+            <span>START.vbs / .bat launcher</span>
+            <span>CATVBS &middot; JScript &middot; Python</span>
+            <span>editable config and libraries</span>
+            <span>logs &middot; working copies</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="structure-title">
+        <div class="section-heading">
+          <p class="eyebrow">Common Structure</p>
+          <h2 id="structure-title">Every tool follows the same layout.</h2>
+        </div>
+        <div class="catia-process-diagram" aria-label="Portable tool structure">
+          <div>
+            <span>01</span>
+            <strong>One launcher</strong>
+            <small>A .vbs or .bat file the user double-clicks or drags a file onto</small>
+          </div>
+          <div>
+            <span>02</span>
+            <strong>Engine plus editable data</strong>
+            <small>Logic separated from libraries and settings, so content changes need no code changes</small>
+          </div>
+          <div>
+            <span>03</span>
+            <strong>Safe output</strong>
+            <small>Work on copies, validate, then write; every run leaves a log</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" id="pb-weight" aria-labelledby="pb-title">
+        <div class="section-heading">
+          <p class="eyebrow">Featured &middot; PB Weight</p>
+          <h2 id="pb-title">Composite weight estimation: from 12 hours to about one minute per ply-book.</h2>
+        </div>
+        <div class="metric-row metric-row-wide" aria-label="PB Weight results">
+          <div>
+            <strong>12 h &rarr; 1 min</strong>
+            <span>Per ply-book, manual versus automated</span>
+          </div>
+          <div>
+            <strong>~720&times;</strong>
+            <span>Faster (99.9% time reduction)</span>
+          </div>
+          <div>
+            <strong>10+</strong>
+            <span>Ply-books validated with correct results</span>
+          </div>
+          <div>
+            <strong>~2</strong>
+            <span>Ply-books to pay back 20 h of development</span>
+          </div>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              <strong>Problem.</strong> A weight estimate meant reading every ply step of the ply-book in CATIA,
+              measuring its surfaces and copying areas, materials and ply counts into a weight calculation and a weight
+              report. About 12 hours per ply-book, with real risk of a missed or double-counted ply.
+            </p>
+            <p>
+              <strong>Structure.</strong> A CATVBS extractor walks the CATIA tree top-down and exports every step. A
+              JScript bridge, run by Windows Script Host, recognizes the two Excel workbooks by their internal
+              structure and fills them through COM, keeping template formulas and formatting. Only CATIA, Excel and
+              Windows are needed: no Python, PowerShell, VBA or admin rights.
+            </p>
+            <p>
+              <strong>Rules and checks.</strong> Multipliers follow one explicit priority and never multiply each
+              other. Every tree node is logged as exported, warning, container, excluded or error, and nothing
+              unreconciled is hidden. Workbooks are edited as copies and replaced only after validation.
+            </p>
+            <p>
+              <strong>Lesson.</strong> Ply-books were structured differently by different engineers. We agreed on a
+              standard structure instead of adding special cases, which made the tool simpler and more reliable.
+              Co-developed with the engineer who requested it.
+            </p>
+          </div>
+
+          <div class="catia-process-diagram" aria-label="PB Weight pipeline">
+            <div>
+              <span>01</span>
+              <strong>Extract</strong>
+              <small>Steps, areas, materials, ply counts</small>
+            </div>
+            <i aria-hidden="true">&darr;</i>
+            <div>
+              <span>02</span>
+              <strong>Apply rules</strong>
+              <small>Multipliers, no double counting</small>
+            </div>
+            <i aria-hidden="true">&darr;</i>
+            <div>
+              <span>03</span>
+              <strong>Fill workbooks</strong>
+              <small>Weight calculation and report</small>
+            </div>
+            <i aria-hidden="true">&darr;</i>
+            <div>
+              <span>04</span>
+              <strong>Reconcile</strong>
+              <small>Node log, review, then replace</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="others-title">
+        <div class="section-heading">
+          <p class="eyebrow">The Other Four Tools</p>
+          <h2 id="others-title">Structure and effectiveness, tool by tool.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <div>
+              <p class="tag">Drawing Notes Manager &middot; Pilot</p>
+              <h3>Standard notes on drawings</h3>
+            </div>
+            <div>
+              <div class="tool-card-block">
+                <p class="tool-card-label">Structure</p>
+                <ul class="project-list">
+                  <li>CATVBS engine plus a small HTA picker window.</li>
+                  <li>Notes in a plain-text library, layout in a config file.</li>
+                  <li>Runs on locked-down PCs by copying the folder.</li>
+                </ul>
+              </div>
+              <div class="tool-card-block">
+                <p class="tool-card-label">Effectiveness</p>
+                <ul class="project-list">
+                  <li>2 min &rarr; &le;1 min per drawing (&ge;50%).</li>
+                  <li>Fewer forgotten or outdated notes; ~10 drawings validated.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Airfoil Mesh &middot; In use</p>
+              <h3>STEP to surface mesh for airfoils</h3>
+            </div>
+            <div>
+              <div class="tool-card-block">
+                <p class="tool-card-label">Structure</p>
+                <ul class="project-list">
+                  <li>Two Python modules on Gmsh: triangles (STL) and true quads (MSH, VTU).</li>
+                  <li>Drag a STEP file onto a .bat; guided, uniform or extruded-profile modes.</li>
+                  <li>Fails loudly if a "full quad" mesh still contains triangles.</li>
+                </ul>
+              </div>
+              <div class="tool-card-block">
+                <p class="tool-card-label">Effectiveness</p>
+                <ul class="project-list">
+                  <li>Quality comparable to ANSA on tested airfoils, in seconds.</li>
+                  <li>Used daily by two meshers; saves license use, not time.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Fast CAD Viewer &middot; Pilot</p>
+              <h3>STEP assemblies without a CAD seat</h3>
+            </div>
+            <div>
+              <div class="tool-card-block">
+                <p class="tool-card-label">Structure</p>
+                <ul class="project-list">
+                  <li>Python, PySide6 and OpenCascade, packaged as a portable folder.</li>
+                  <li>Part tree, fast hide/show, section planes and search.</li>
+                </ul>
+              </div>
+              <div class="tool-card-block">
+                <p class="tool-card-label">Effectiveness</p>
+                <ul class="project-list">
+                  <li>No CATIA license needed just to look at an assembly.</li>
+                  <li>Tested on company PCs, no access rights required.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">DXF Mirror LH &rarr; RH &middot; Released</p>
+              <h3>Right-hand templates from left-hand ones</h3>
+            </div>
+            <div>
+              <div class="tool-card-block">
+                <p class="tool-card-label">Structure</p>
+                <ul class="project-list">
+                  <li>One Python script with an embedded runtime and a .bat launcher.</li>
+                  <li>Edits DXF text directly: only geometry changes, layers and handles stay.</li>
+                </ul>
+              </div>
+              <div class="tool-card-block">
+                <p class="tool-card-label">Effectiveness</p>
+                <ul class="project-list">
+                  <li>A whole folder of LH templates mirrored in one run.</li>
+                  <li>Texts stay readable; fiber-direction symbols are not flipped.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+        <ul class="method-tags" aria-label="Methods and tools">
+          <li>CATVBS</li>
+          <li>JScript / Windows Script Host</li>
+          <li>Excel COM</li>
+          <li>Python</li>
+          <li>Gmsh</li>
+          <li>OpenCascade</li>
+          <li>DXF Processing</li>
+          <li>Portable Deployment</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Francesco Sala</span>
+      <a href="ycom-internship.html">Back to YCOM</a>
+    </footer>
+  </body>
+</html>

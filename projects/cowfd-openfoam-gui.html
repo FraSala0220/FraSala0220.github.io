@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="CowFD: an ongoing personal project building a native C++ desktop environment for OpenFOAM with Qt 6, OpenCascade and VTK, from CAD import and snappyHexMesh to solver runs, live residuals and automatic image reports."
+    >
+    <title>CowFD: OpenFOAM Desktop GUI | Francesco Sala</title>
+    <link rel="stylesheet" href="../styles.css?v=ycom-split-20261007">
+  </head>
+  <body class="project-page catia-ai-page">
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Back to Francesco Sala homepage">Francesco Sala</a>
+      <nav class="nav-links" aria-label="Project navigation">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-hero section-shell" aria-labelledby="project-title">
+        <div class="project-hero-copy">
+          <p class="eyebrow">Personal Project &middot; CFD Software &middot; Ongoing</p>
+          <h1 class="project-title-compact" id="project-title">CowFD</h1>
+          <p class="project-subtitle">A professional desktop environment for engineers who already know OpenFOAM</p>
+          <p class="project-lede">
+            OpenFOAM is accurate and free, but every case means editing text dictionaries, running utilities in a
+            terminal and opening ParaView to see anything. CowFD makes that loop faster with a CATIA/ANSA-style
+            interface, while the case on disk stays a normal OpenFOAM case that can be read and edited by hand.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#gallery">See a Test Case</a>
+            <a class="button secondary" href="../index.html#projects">Back to Projects</a>
+          </div>
+        </div>
+
+        <div>
+          <img
+            class="cowfd-logo"
+            src="../assets/images/cowfd/cowfd-logo.webp"
+            alt="CowFD logo: a cow wrapped in colored CFD streamlines"
+          >
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="goal-title">
+        <div class="section-heading">
+          <p class="eyebrow">Objective</p>
+          <h2 id="goal-title">Faster than the terminal, without hiding OpenFOAM.</h2>
+        </div>
+        <div class="metric-row metric-row-wide" aria-label="Project principles">
+          <div>
+            <strong>Correctness</strong>
+            <span>First priority, ahead of reproducibility, transparency and UX</span>
+          </div>
+          <div>
+            <strong>2-way</strong>
+            <span>GUI settings and OpenFOAM dictionaries update each other</span>
+          </div>
+          <div>
+            <strong>End-to-end</strong>
+            <span>CAD import, mesh, solve and post-process in one app</span>
+          </div>
+          <div>
+            <strong>Native</strong>
+            <span>Windows desktop app driving OpenFOAM 11 through WSL2</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell project-overview" aria-labelledby="project-overview-title">
+        <div class="section-heading">
+          <h2 id="project-overview-title">Overview</h2>
+        </div>
+        <div class="project-overview-grid">
+          <article class="project-overview-card">
+            <h3>Who It Is For</h3>
+            <p>
+              A CFD engineer who already understands OpenFOAM. The goal is not CFD for beginners: it is the same
+              solver with a modern workflow, so time goes into the physics instead of file editing.
+            </p>
+          </article>
+
+          <article class="project-overview-card">
+            <h3>Design Principles</h3>
+            <ul>
+              <li>The 0/, constant/ and system/ folders always stay visible and editable.</li>
+              <li>Every run is archived with the settings that produced it.</li>
+              <li>Physical correctness is never traded for a simpler interface.</li>
+            </ul>
+          </article>
+
+          <article class="project-overview-card project-overview-card-outcome">
+            <h3>Where It Stands</h3>
+            <ul>
+              <li>Full loop working on external-flow test cases.</li>
+              <li>Automatic image reports of solved cases.</li>
+              <li>Next: mesh-quality and simulation-health checks, parallel runs.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-facts" aria-label="Project summary">
+        <dl class="project-info-grid">
+          <div>
+            <dt>Role</dt>
+            <dd>Sole Developer &middot; Personal Project</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd>Ongoing &middot; Sep. 2026 &ndash; Present</dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+            <dd>C++20 &middot; Qt 6 &middot; OpenCascade &middot; VTK &middot; CMake &middot; vcpkg</dd>
+          </div>
+          <div class="project-outcome-card">
+            <dt>Solver</dt>
+            <dd>OpenFOAM 11</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="section-shell project-section" id="gallery" aria-labelledby="gallery-title">
+        <div class="section-heading">
+          <p class="eyebrow">Test Case &middot; Ducted Fan</p>
+          <h2 id="gallery-title">One click from a solved case to a full image report.</h2>
+        </div>
+        <div class="project-text">
+          <p>
+            These images come straight from CowFD's report tool on a ducted-fan test geometry. It renders slices
+            along X, Y and Z for velocity, pressure and turbulence fields, plus wall pressure and y+, offscreen with
+            VTK. It runs as a separate process, so a multi-million-cell case can take its time without freezing the
+            interface. This is a development test case, not a validated design study.
+          </p>
+        </div>
+        <div class="generation-grid cfd-gallery">
+          <figure>
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/cowfd/ducted-fan-velocity.webp"
+              alt="Velocity magnitude slice through a ducted fan, showing the accelerated jet downstream"
+              loading="lazy"
+            >
+            <figcaption>Velocity magnitude with flow vectors on the mid-plane.</figcaption>
+          </figure>
+          <figure>
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/cowfd/ducted-fan-vorticity.webp"
+              alt="Logarithmic vorticity magnitude slice through the ducted fan and its wake"
+              loading="lazy"
+            >
+            <figcaption>Vorticity magnitude (log scale): blade passage and wake.</figcaption>
+          </figure>
+          <figure>
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/cowfd/ducted-fan-wall-pressure.webp"
+              alt="Wall pressure on the duct, hub and blades seen from upstream"
+              loading="lazy"
+            >
+            <figcaption>Kinematic wall pressure on duct, hub and blades.</figcaption>
+          </figure>
+          <figure>
+            <img
+              class="project-image project-image-contain"
+              src="../assets/images/cowfd/ducted-fan-yplus.webp"
+              alt="y-plus distribution on the ducted fan walls"
+              loading="lazy"
+            >
+            <figcaption>y+ on the walls, used to check near-wall mesh resolution.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" id="features" aria-labelledby="features-title">
+        <div class="section-heading">
+          <p class="eyebrow">What Works Today</p>
+          <h2 id="features-title">The whole CFD loop, without leaving the application.</h2>
+        </div>
+        <div class="generation-grid">
+          <article class="generation-card">
+            <div>
+              <p class="tag">Geometry &amp; Mesh</p>
+              <h3>From CAD to a checked mesh</h3>
+            </div>
+            <ul class="project-list">
+              <li>CAD import and display in an OpenCascade viewer.</li>
+              <li>blockMesh background mesh plus snappyHexMesh, with editable grading.</li>
+              <li>Inside-fluid point placed automatically from the domain box; checkMesh on demand.</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Case Setup</p>
+              <h3>Form panels for every dictionary</h3>
+            </div>
+            <ul class="project-list">
+              <li>Boundary conditions for every field in the case.</li>
+              <li>Turbulence model, fluid properties, schemes, linear solvers and relaxation.</li>
+              <li>Built-in dictionary editor and case file browser for anything else.</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Run</p>
+              <h3>Solve and monitor live</h3>
+            </div>
+            <ul class="project-list">
+              <li>Solver launched from the GUI, with its output in a console dock.</li>
+              <li>Live residual plot and residual-based convergence control.</li>
+              <li>Lift, drag and moment coefficients in a Forces tab.</li>
+            </ul>
+          </article>
+
+          <article class="generation-card">
+            <div>
+              <p class="tag">Results</p>
+              <h3>Post-process in place</h3>
+            </div>
+            <ul class="project-list">
+              <li>VTK field viewer with time-step controls and an editable legend range.</li>
+              <li>Automatic image report; one-click ParaView launch.</li>
+              <li>Previous runs archived with their settings before a new one starts.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="architecture-title">
+        <div class="section-heading">
+          <p class="eyebrow">Architecture</p>
+          <h2 id="architecture-title">One source of truth, kept in sync with the files on disk.</h2>
+        </div>
+        <div class="project-two-column">
+          <div class="project-text">
+            <p>
+              A core engineering model (geometry, mesh, physics, boundary conditions, numerics, solver, results and
+              run history) owns the state. Qt widgets and the 3D viewers read and write that model and never call
+              OpenFOAM directly. An adapter parses and writes the dictionaries both ways, so a hand edit to a file
+              shows up in the GUI.
+            </p>
+            <p>
+              OpenFOAM has no reliable native Windows build, so every command runs through a process layer that calls
+              OpenFOAM 11 inside WSL2 and translates paths. A set of CATIA macros prepares the CAD side: surfaces are
+              split into zones, tagged by role and exported as a STEP package with a manifest.
+            </p>
+          </div>
+
+          <div class="catia-process-diagram" aria-label="Application layers">
+            <div>
+              <span>UI</span>
+              <strong>Qt docks, panels, plots</strong>
+              <small>OpenCascade and VTK viewports</small>
+            </div>
+            <i aria-hidden="true">&darr;</i>
+            <div>
+              <span>CORE</span>
+              <strong>Engineering model</strong>
+              <small>Single source of truth</small>
+            </div>
+            <i aria-hidden="true">&darr;</i>
+            <div>
+              <span>FOAM</span>
+              <strong>Dictionary adapter and runner</strong>
+              <small>WSL2 &middot; OpenFOAM 11 &middot; ParaView</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="context-title">
+        <div class="section-heading">
+          <p class="eyebrow">Background</p>
+          <h2 id="context-title">Built on two academic CFD studies.</h2>
+        </div>
+        <div class="project-text">
+          <p>
+            The project grows out of my OpenFOAM coursework: the
+            <a class="company-link" href="converging-nozzle-cfd.html">converging nozzle</a> and the
+            <a class="company-link" href="naca-4412-airfoil-cfd.html">NACA 4412 airfoil</a> studies, both built on
+            mesh-independence, near-wall and convergence checks. The app includes a reference airfoil case as its
+            first test.
+          </p>
+        </div>
+        <ul class="method-tags" aria-label="Methods and tools">
+          <li>C++20</li>
+          <li>Qt 6</li>
+          <li>OpenCascade</li>
+          <li>VTK</li>
+          <li>OpenFOAM</li>
+          <li>snappyHexMesh</li>
+          <li>CMake &amp; vcpkg</li>
+          <li>WSL2</li>
+          <li>Software Architecture</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Francesco Sala</span>
+      <a href="../index.html#projects">Back to Projects</a>
+    </footer>
+  </body>
+</html>

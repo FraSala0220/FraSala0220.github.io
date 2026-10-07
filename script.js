@@ -123,6 +123,7 @@ const renderTimelineSection = (section) => `
                   <h3>${escapeHtml(item.role)}</h3>
                   <p class="company">${company}</p>
                   <p>${escapeHtml(item.description)}</p>
+                  ${item.detailsHref ? `<a class="timeline-details-link" href="${escapeHtml(item.detailsHref)}">${escapeHtml(item.detailsLabel || "View details")} <span aria-hidden="true">&rarr;</span></a>` : ""}
                 </div>
                 ${logo}
               </div>

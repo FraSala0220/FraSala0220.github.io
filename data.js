@@ -55,7 +55,9 @@ window.PORTFOLIO_DATA = {
             variant: "wide",
           },
           description:
-            "Designing and optimizing composite, metallic, and 3D printed motorsport components in CATIA V5, with technical drawings, documentation, and GD&T layouts for manufacturing teams.",
+            "Design of carbon-fiber, sheet-metal, 3D-printed and molded motorsport components in CATIA V5, from technical drawings to structural tests. Built 22 automation tools for the design office, cutting composite weight estimation from 12 hours to about one minute.",
+          detailsHref: "projects/ycom-internship.html",
+          detailsLabel: "Activities and automation projects",
         },
         {
           period: "Nov. 2022 - Present",
@@ -135,16 +137,53 @@ window.PORTFOLIO_DATA = {
           outcome: "\u20ac2K TEF Validation Grant",
         },
         {
-          tag: "CATIA V5 \u00b7 Python \u00b7 VBScript \u00b7 Codex",
-          topic: "AI-Assisted Engineering \u00b7 CATIA Automation",
-          year: "2026\u2013Ongoing",
-          title: "AI \u00d7 CATIA Automation",
-          href: "projects/catia-ai-automation.html",
-          placeholder: "AI \u00d7 CATIA",
-          placeholderNote: "Ongoing development",
+          tag: "CATIA V5 · CATVBS · Drafting · Assemblies",
+          topic: "Engineering Automation @ YCOM · 1 of 3",
+          year: "2026–Ongoing",
+          title: "CATIA V5 Macros",
+          href: "projects/ycom-catia-macros.html",
+          placeholder: "MACROS",
+          placeholderNote: "10 CATIA V5 macros",
           description:
-            "AI-assisted macro generation and a Python\u2013CATIA bridge for documentation, assemblies, Excel reporting, 3D component creation and mesh workflows.",
-          outcome: "\u226590% time reduction",
+            "Ten focused automations for exports, fastener constraints, check-in, revisions and part-code reports in a motorsport design office.",
+          outcome: "60 s → 5 s per export",
+        },
+        {
+          tag: "CATIA · Excel COM · Python · Gmsh",
+          topic: "Engineering Automation @ YCOM · 2 of 3",
+          year: "2026–Ongoing",
+          title: "Portable Engineering Tools",
+          href: "projects/ycom-portable-tools.html",
+          placeholder: "PORTABLE",
+          placeholderNote: "5 no-install tools",
+          description:
+            "Folder-based tools for locked-down PCs, led by PB Weight: composite weight estimation from the CATIA ply-book to the Excel report.",
+          outcome: "12 h → 1 min weight estimate",
+        },
+        {
+          tag: "Python · OpenCascade · Gmsh · OpenCV",
+          topic: "Engineering Automation @ YCOM · 3 of 3",
+          year: "2026–Ongoing",
+          title: "Engineering Software",
+          href: "projects/ycom-engineering-software.html",
+          placeholder: "SOFTWARE",
+          placeholderNote: "7 applications",
+          description:
+            "In-house nesting replacing NestFab, a quad mesher benchmarked against ANSA, mold decomposition, void measurement and stock sizing.",
+          outcome: "~5% less carbon vs NestFab",
+        },
+        {
+          tag: "C++ · Qt · OpenCascade · VTK · OpenFOAM",
+          topic: "CFD Software · Personal Project",
+          year: "2026–Ongoing",
+          title: "CowFD: OpenFOAM Desktop GUI",
+          href: "projects/cowfd-openfoam-gui.html",
+          image: "assets/images/cowfd/cowfd-logo.webp",
+          imageAlt: "CowFD logo: a cow wrapped in colored CFD streamlines",
+          imageFit: "contain",
+          description:
+            "Native C++ desktop environment for OpenFOAM: CAD import, snappyHexMesh, solver runs, live residuals, forces and automatic image reports.",
+          outcome: "CAD → Mesh → Solve → Results",
         },
         {
           tag: "Product Design \u00b7 CAD \u00b7 DFM \u00b7 Open Innovation",
@@ -265,7 +304,7 @@ window.PORTFOLIO_DATA = {
         {
           title: "Simulation & Optimization",
           description:
-            "Abaqus (composite, nonlinear, buckling, cohesive damage FEA), Isight, Altair Inspire (topology optimization), OpenFOAM (CFD, turbulence modelling, mesh independence, y+ assessment), MATLAB (Bayesian optimization, PID control, Gaussian processes), Simulink, Simscape",
+            "Abaqus (composite, nonlinear, buckling, cohesive damage FEA), Isight, Altair Inspire (topology optimization), OpenFOAM (CFD, snappyHexMesh, turbulence modelling, mesh independence, y+ assessment), Gmsh (surface meshing), MATLAB (Bayesian optimization, PID control, Gaussian processes), Simulink, Simscape",
         },
         {
           title: "Manufacturing & DFM",
@@ -274,11 +313,13 @@ window.PORTFOLIO_DATA = {
         },
         {
           title: "Programming",
-          description: "Python, MATLAB, OpenAI API, Git, HTML5, CSS3",
+          description:
+            "Python, C++ (Qt 6, OpenCascade, VTK), CATIA V5 automation (CATVBS, COM API), MATLAB, TypeScript (React, Three.js), OpenAI API, Git, HTML5, CSS3",
         },
         {
           title: "AI-Assisted Engineering",
-          description: "OpenAI Codex, ChatGPT, Claude, Gemini, prompt engineering, human-in-the-loop validation for CAD and CNC automation workflows",
+          description:
+            "OpenAI Codex, Claude Code, ChatGPT, Gemini, prompt engineering, human-in-the-loop validation for CAD and CNC automation workflows, CatBoost cost models, OpenCV visual inspection",
         },
         {
           title: "Product Development",

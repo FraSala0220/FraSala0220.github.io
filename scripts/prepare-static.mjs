@@ -10,6 +10,7 @@ const sourceFiles = [
   "script.js",
   "google-tag.js",
   "cookie-consent.js",
+  "_redirects",
 ];
 const sourceDirectories = ["assets", "projects"];
 

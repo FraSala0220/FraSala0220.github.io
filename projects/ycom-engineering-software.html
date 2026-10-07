@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Seven engineering applications built at YCOM: SOFTNEST nesting replacing NestFab, a Gmsh quad mesher benchmarked against ANSA, DRAFTAI mold decomposition, CFRP void measurement and MBB Studio stock sizing."
+    >
+    <title>Engineering Software @ YCOM | Francesco Sala</title>
+    <link rel="stylesheet" href="../styles.css?v=ycom-split-20261007">
+  </head>
+  <body class="project-page catia-ai-page">
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Back to Francesco Sala homepage">Francesco Sala</a>
+      <nav class="nav-links" aria-label="Project navigation">
+        <a href="ycom-internship.html">YCOM</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-hero section-shell" aria-labelledby="project-title">
+        <div class="project-hero-copy">
+          <p class="eyebrow">Engineering Automation @ YCOM &middot; 3 of 3</p>
+          <h1 class="project-title-compact" id="project-title">Engineering Software</h1>
+          <p class="project-subtitle">Seven applications for problems that need real geometry, vision or optimization</p>
+          <p class="project-lede">
+            Some problems are too large for a macro: nesting plies on a roll, meshing composite surfaces, splitting a
+            mold, measuring defects in a photo. For each one I started from the current process and its cost, built
+            an in-house alternative, and measured it against the tool or the manual work it should replace.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#softnest">Start with SOFTNEST</a>
+            <a class="button secondary" href="ycom-internship.html">Back to YCOM</a>
+          </div>
+        </div>
+
+        <div class="catia-ai-visual" role="img" aria-label="Seven in-house applications compared against licensed tools and manual work">
+          <div class="catia-ai-visual-topline">
+            <span>Python &middot; TypeScript</span>
+            <span>2026</span>
+          </div>
+          <div class="catia-ai-mark">7 <span>apps</span></div>
+          <div class="catia-ai-flow" aria-hidden="true">
+            <span>Current process</span>
+            <b>&rarr;</b>
+            <span>In-house tool</span>
+            <b>&rarr;</b>
+            <span>Benchmark</span>
+          </div>
+          <div class="catia-code-panel" aria-hidden="true">
+            <span>SOFTNEST vs NestFab</span>
+            <span>Gmsh mesher vs ANSA</span>
+            <span>DRAFTAI vs manual mold split</span>
+            <span>Void tool &middot; MBB vs manual checks</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="overview-title">
+        <div class="section-heading">
+          <p class="eyebrow">At a Glance</p>
+          <h2 id="overview-title">Seven applications, each labeled with its real status.</h2>
+        </div>
+        <div class="tool-table">
+          <article class="tool-row">
+            <h3><a href="#softnest">SOFTNEST</a> <span class="status-pill status-in-use">Validated</span></h3>
+            <p>DXF nesting of carbon-fiber ply templates, built to replace NestFab.</p>
+            <span class="tool-result">~5% less material</span>
+          </article>
+          <article class="tool-row">
+            <h3><a href="#mesher">Quad-Dominant Mesher</a> <span class="status-pill status-prototype">Prototype</span></h3>
+            <p>Surface mesher on Gmsh and OpenCascade, benchmarked against ANSA.</p>
+            <span class="tool-result">100% quad on coupons</span>
+          </article>
+          <article class="tool-row">
+            <h3><a href="#draftai">DRAFTAI</a> <span class="status-pill status-prototype">Prototype</span></h3>
+            <p>Splits a part surface into carbon mold pieces, flanges and milled patterns.</p>
+            <span class="tool-result">&ge;1 day &rarr; minutes + review</span>
+          </article>
+          <article class="tool-row">
+            <h3><a href="#voids">CFRP Void Measurement</a> <span class="status-pill status-prototype">Prototype</span></h3>
+            <p>Detects and measures surface voids from photographs, with human validation.</p>
+            <span class="tool-result">0.1 mm target</span>
+          </article>
+          <article class="tool-row">
+            <h3><a href="#mbb">MBB Studio</a> <span class="status-pill status-in-use">Validated</span></h3>
+            <p>Smallest oriented raw-stock box for machined and molded parts.</p>
+            <span class="tool-result">3&ndash;5 min &rarr; ~20 s</span>
+          </article>
+          <article class="tool-row">
+            <h3>Wiring Harness Studio <span class="status-pill">Concept</span></h3>
+            <p>Electrical architecture data plus a React/Three.js 3D view for routing a race-car harness.</p>
+            <span class="tool-result">Early stage</span>
+          </article>
+          <article class="tool-row">
+            <h3>Supplier Quote Predictor <span class="status-pill">Concept</span></h3>
+            <p>CatBoost model to estimate sheet-metal part cost from DXF, material and quantity before a quote request.</p>
+            <span class="tool-result">Awaiting training data</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" id="softnest" aria-labelledby="softnest-title">
+        <div class="section-heading">
+          <p class="eyebrow">01 &middot; SOFTNEST</p>
+          <h2 id="softnest-title">Replacing NestFab for ply nesting.</h2>
+        </div>
+        <div class="metric-row metric-row-wide" aria-label="SOFTNEST results">
+          <div><strong>~5%</strong><span>Average material saving versus NestFab</span></div>
+          <div><strong>8.52%</strong><span>Documented case: 256 placements, 0 unplaced</span></div>
+          <div><strong>300+</strong><span>DXF templates tested on two real jobs</span></div>
+          <div><strong>&lt;1 year</strong><span>Payback from the license alone, ~8 h of development</span></div>
+        </div>
+        <div class="project-overview-grid">
+          <article class="project-overview-card">
+            <h3>Problem</h3>
+            <p>
+              Carbon-fiber ply templates were nested on the prepreg roll with NestFab, an annual license used for one
+              narrow job. Prepreg is expensive, so every percent of roll length matters.
+            </p>
+          </article>
+          <article class="project-overview-card">
+            <h3>How I Tackled It</h3>
+            <ul>
+              <li>Used a published strip-packing solver (Sparrow, via spyrrow) instead of a home-made heuristic.</li>
+              <li>Added what production needs: DXF import, quantities, fixed/orthogonal/free rotation per template.</li>
+              <li>Rebuilt the CAD geometry and re-checked collisions with Shapely, independently of the solver.</li>
+              <li>Exported cutter DXF plus PDF and CSV reports.</li>
+            </ul>
+          </article>
+          <article class="project-overview-card project-overview-card-outcome">
+            <h3>Result</h3>
+            <ul>
+              <li><strong>~5% less material</strong> than NestFab on average.</li>
+              <li>No recurring license for this job.</li>
+              <li>Verified, not yet in production; the 15% target of one case was not reached.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" id="mesher" aria-labelledby="mesher-title">
+        <div class="section-heading">
+          <p class="eyebrow">02 &middot; Quad-Dominant Mesher</p>
+          <h2 id="mesher-title">Learning from ANSA, then meshing with open-source tools.</h2>
+        </div>
+        <div class="metric-row metric-row-wide" aria-label="Mesher results">
+          <div><strong>100% vs 98.5%</strong><span>Quads on a 29-coupon benchmark, versus ANSA</span></div>
+          <div><strong>97.2% vs 98.2%</strong><span>Quads on a real 83-skin part, versus ANSA</span></div>
+          <div><strong>&le;0.4%</strong><span>Quads outside quality limits on two real parts</span></div>
+          <div><strong>73 &rarr; 30</strong><span>Benchmark penalty after one night of tuning</span></div>
+        </div>
+        <div class="project-overview-grid">
+          <article class="project-overview-card">
+            <h3>Problem</h3>
+            <p>
+              Composite surface meshes were made entirely in ANSA, even for narrow jobs. STEP exports split smooth
+              surfaces into tiny faces and fillet strips, and a naive mesher distorts elements exactly there.
+            </p>
+          </article>
+          <article class="project-overview-card">
+            <h3>How I Tackled It</h3>
+            <ul>
+              <li>Imported ANSA meshes and scored them: a structured grid almost everywhere (45 irregular nodes in 97,000).</li>
+              <li>Grouped faces into zones bounded only by sharp edges.</li>
+              <li>Flattened each zone, laid a structured grid, joined it to the border with one row chosen by dynamic programming, then projected back onto the exact CAD.</li>
+              <li>Froze my first hand-written engine as a reference and moved to Gmsh; tuned on a 7-case benchmark.</li>
+            </ul>
+          </article>
+          <article class="project-overview-card project-overview-card-outcome">
+            <h3>Result</h3>
+            <ul>
+              <li>Ahead of ANSA on coupons, close on real parts.</li>
+              <li>Still more elements and higher skew than ANSA.</li>
+              <li>Goal: replace ANSA for specific jobs, not all meshing.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" id="draftai" aria-labelledby="draftai-title">
+        <div class="section-heading">
+          <p class="eyebrow">03 &middot; DRAFTAI</p>
+          <h2 id="draftai-title">From a part surface to carbon mold pieces in minutes.</h2>
+        </div>
+        <div class="project-overview-grid">
+          <article class="project-overview-card">
+            <h3>Problem</h3>
+            <p>
+              Splitting a mold meant analyzing pull directions, choosing parting lines and the number of pieces, then
+              drawing each one: a working day or more per part.
+            </p>
+          </article>
+          <article class="project-overview-card">
+            <h3>How I Tackled It</h3>
+            <ul>
+              <li>Meshed the surface with Gmsh and grouped normals by feasible pull direction, with a 10&deg; minimum draft.</li>
+              <li>Searched the main direction that needs the fewest parting planes.</li>
+              <li>Built 60 mm planar flanges and 3-axis-millable resin patterns with OpenCascade.</li>
+              <li>Wrote results back into CATIA as native, colored extracts, never saving automatically.</li>
+            </ul>
+          </article>
+          <article class="project-overview-card project-overview-card-outcome">
+            <h3>Result</h3>
+            <ul>
+              <li>Correct pull directions on 3&ndash;4 test parts versus manual analysis.</li>
+              <li>Minutes of computation plus mandatory review.</li>
+              <li>Complex geometry is the open limit; not yet used on a job.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" id="voids" aria-labelledby="voids-title">
+        <div class="section-heading">
+          <p class="eyebrow">04 &middot; CFRP Void Measurement</p>
+          <h2 id="voids-title">A photograph in, traceable void dimensions out.</h2>
+        </div>
+        <div class="project-overview-grid">
+          <article class="project-overview-card">
+            <h3>Problem</h3>
+            <p>
+              Voids on carbon specimens were judged by eye, with no record. A phone photo has perspective and no
+              scale, so counting pixels is not a measurement.
+            </p>
+          </article>
+          <article class="project-overview-card">
+            <h3>How I Tackled It</h3>
+            <ul>
+              <li>Rectified the specimen with a projective homography, scaled by its known width.</li>
+              <li>Proposed dark enclosed cavities with a multi-scale OpenCV detector.</li>
+              <li>Required a person to accept, redraw or reject every proposal before measuring.</li>
+              <li>Reported Feret, area and an expanded uncertainty (k = 2) for each void.</li>
+            </ul>
+          </article>
+          <article class="project-overview-card project-overview-card-outcome">
+            <h3>Result</h3>
+            <ul>
+              <li>Working review workflow; ~20 test images.</li>
+              <li>Target resolution 0.1 mm.</li>
+              <li>Next: calibration for any specimen width and tests on company specimens.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" id="mbb" aria-labelledby="mbb-title">
+        <div class="section-heading">
+          <p class="eyebrow">05 &middot; MBB Studio</p>
+          <h2 id="mbb-title">The smallest raw-stock block, in about twenty seconds.</h2>
+        </div>
+        <div class="project-overview-grid">
+          <article class="project-overview-card">
+            <h3>Problem</h3>
+            <p>
+              Raw-stock size was estimated in CATIA: a few minutes per part and not precise, so stock was often
+              oversized.
+            </p>
+          </article>
+          <article class="project-overview-card">
+            <h3>How I Tackled It</h3>
+            <ul>
+              <li>Reduced each STEP or STL part to its convex hull.</li>
+              <li>Started from principal axes, then ran an evolutionary orientation search with local refinement.</li>
+              <li>Verified full containment, then added the machining offset.</li>
+            </ul>
+          </article>
+          <article class="project-overview-card project-overview-card-outcome">
+            <h3>Result</h3>
+            <ul>
+              <li>~20 s per part instead of 3&ndash;5 min.</li>
+              <li>~20 parts checked, all fully contained.</li>
+              <li>Heuristic: no proof of the global minimum yet.</li>
+            </ul>
+          </article>
+        </div>
+        <ul class="method-tags" aria-label="Methods and tools">
+          <li>Python</li>
+          <li>OpenCascade</li>
+          <li>Gmsh</li>
+          <li>Shapely</li>
+          <li>OpenCV</li>
+          <li>CatBoost</li>
+          <li>React / Three.js</li>
+          <li>Benchmarking</li>
+          <li>Computational Geometry</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Francesco Sala</span>
+      <a href="ycom-internship.html">Back to YCOM</a>
+    </footer>
+  </body>
+</html>

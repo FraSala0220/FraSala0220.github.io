@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Ten CATIA V5 macros written in CATVBS for a motorsport design office: exports, fastener constraints, PLM check-in, revisions, part-code reports and one-off batch operations."
+    >
+    <title>CATIA V5 Macros @ YCOM | Francesco Sala</title>
+    <link rel="stylesheet" href="../styles.css?v=ycom-split-20261007">
+  </head>
+  <body class="project-page catia-ai-page">
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Back to Francesco Sala homepage">Francesco Sala</a>
+      <nav class="nav-links" aria-label="Project navigation">
+        <a href="ycom-internship.html">YCOM</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-hero section-shell" aria-labelledby="project-title">
+        <div class="project-hero-copy">
+          <p class="eyebrow">Engineering Automation @ YCOM &middot; 1 of 3</p>
+          <h1 class="project-title-compact" id="project-title">CATIA V5 Macros</h1>
+          <p class="project-subtitle">Ten small automations for the most repeated CAD tasks</p>
+          <p class="project-lede">
+            A macro is the lightest possible tool: a single CATVBS file that runs inside CATIA, needs no installation
+            and does one job well. I wrote these for tasks colleagues repeated dozens of times a day, and for a few
+            one-off jobs where a deadline made manual work impossible.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#macros">See the Macros</a>
+            <a class="button secondary" href="ycom-internship.html">Back to YCOM</a>
+          </div>
+        </div>
+
+        <div class="catia-ai-visual" role="img" aria-label="CATIA macros grouped into daily department use, project management and one-off jobs">
+          <div class="catia-ai-visual-topline">
+            <span>CATVBS &middot; CATIA V5 API</span>
+            <span>2026</span>
+          </div>
+          <div class="catia-ai-mark">10 <span>macros</span></div>
+          <div class="catia-ai-flow" aria-hidden="true">
+            <span>7 daily use</span>
+            <b>+</b>
+            <span>1 project mgmt</span>
+            <b>+</b>
+            <span>2 one-off</span>
+          </div>
+          <div class="catia-code-panel" aria-hidden="true">
+            <span>Tools &gt; Macro &gt; Alt+F8 &gt; Run</span>
+            <span>no install &middot; no admin rights</span>
+            <span>never saves without the user</span>
+            <span>reports what it could not process</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="impact-title">
+        <div class="section-heading">
+          <p class="eyebrow">Measured Impact</p>
+          <h2 id="impact-title">Seconds instead of minutes, many times a day.</h2>
+        </div>
+        <div class="metric-row metric-row-wide" aria-label="Results">
+          <div>
+            <strong>&minus;92%</strong>
+            <span>Export time per component (60 s &rarr; 5 s), ~300 parts</span>
+          </div>
+          <div>
+            <strong>&minus;90%</strong>
+            <span>Fastener insertion time (30 s &rarr; 3 s), ~100 parts</span>
+          </div>
+          <div>
+            <strong>2 days &rarr; min</strong>
+            <span>One-off batch job, zero errors</span>
+          </div>
+          <div>
+            <strong>~10</strong>
+            <span>Potential daily users across the technical department</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" id="macros" aria-labelledby="daily-title">
+        <div class="section-heading">
+          <p class="eyebrow">Group 1 &middot; Daily Use in the Technical Department</p>
+          <h2 id="daily-title">What each macro is for.</h2>
+        </div>
+        <div class="tool-table">
+          <article class="tool-row">
+            <h3>File Out <span class="status-pill status-in-use">In use</span></h3>
+            <p>Exports drawings and models in the standard formats, one part or a whole batch.</p>
+            <span class="tool-result">Faster, consistent exports</span>
+          </article>
+          <article class="tool-row">
+            <h3>Fastener Auto-Constraints <span class="status-pill status-in-use">In use</span></h3>
+            <p>Places repeated fasteners in an assembly with their constraints.</p>
+            <span class="tool-result">Less manual assembly work</span>
+          </article>
+          <article class="tool-row">
+            <h3>PDF Save &amp; Check-in <span class="status-pill status-in-use">In use</span></h3>
+            <p>Saves the drawing as PDF and hands it to the data-management system after a check.</p>
+            <span class="tool-result">Reliable releases</span>
+          </article>
+          <article class="tool-row">
+            <h3>Revision Update <span class="status-pill">Released</span></h3>
+            <p>Updates the drawing revision and produces the revised PDF.</p>
+            <span class="tool-result">Consistent revisions</span>
+          </article>
+          <article class="tool-row">
+            <h3>Surface Area Export <span class="status-pill">Released</span></h3>
+            <p>Collects surface areas into a spreadsheet; the starting point of PB Weight.</p>
+            <span class="tool-result">Quick area tables</span>
+          </article>
+          <article class="tool-row">
+            <h3>Symmetry <span class="status-pill">Released</span></h3>
+            <p>Creates the mirrored version of a part in one command.</p>
+            <span class="tool-result">Fast left/right pairs</span>
+          </article>
+          <article class="tool-row">
+            <h3>Auto Drawing <span class="status-pill status-prototype">Prototype</span></h3>
+            <p>Generates a first draft of a technical drawing from the 3D part.</p>
+            <span class="tool-result">Draft drawing in seconds</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="pm-title">
+        <div class="section-heading">
+          <p class="eyebrow">Group 2 &middot; Project Management</p>
+          <h2 id="pm-title">Data out of CATIA, straight into project tracking.</h2>
+        </div>
+        <div class="tool-table">
+          <article class="tool-row">
+            <h3>Part-Code Export <span class="status-pill status-in-use">In use</span></h3>
+            <p>Exports the list of codes in an assembly for order tracking.</p>
+            <span class="tool-result">No manual copying</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="oneoff-title">
+        <div class="section-heading">
+          <p class="eyebrow">Group 3 &middot; One-Off Jobs</p>
+          <h2 id="oneoff-title">Written quickly, paid back in a single use.</h2>
+        </div>
+        <div class="tool-table">
+          <article class="tool-row">
+            <h3>Batch Geometry Operation <span class="status-pill">One-off</span></h3>
+            <p>Automated a repetitive geometry task across many parts during a workload peak.</p>
+            <span class="tool-result">Deadline met</span>
+          </article>
+          <article class="tool-row">
+            <h3>Guarded Batch Rename <span class="status-pill">One-off</span></h3>
+            <p>Renamed a large number of elements across several documents, with checks against wrong matches.</p>
+            <span class="tool-result">Days &rarr; minutes, no errors</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell project-section" aria-labelledby="method-title">
+        <div class="section-heading">
+          <p class="eyebrow">How They Are Built</p>
+          <h2 id="method-title">Same rules for every macro.</h2>
+        </div>
+        <div class="project-text">
+          <p>
+            Every macro carries its own header: description, requirements, step-by-step usage, warnings, author and
+            license. Macros that change the document never save automatically and stop with a clear message when the
+            input is not what they expect. Each one is distributed as a numbered pair of files, an executable
+            <code>.catvbs</code> and an identical <code>.txt</code> for reading.
+          </p>
+        </div>
+        <ul class="method-tags" aria-label="Methods and tools">
+          <li>CATIA V5 API</li>
+          <li>CATVBS</li>
+          <li>Drafting Automation</li>
+          <li>Assembly Constraints</li>
+          <li>PLM Integration</li>
+          <li>Excel / CSV Export</li>
+          <li>Measured Time Savings</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Francesco Sala</span>
+      <a href="ycom-internship.html">Back to YCOM</a>
+    </footer>
+  </body>
+</html>

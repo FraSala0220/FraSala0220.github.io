@@ -1872,3 +1872,190 @@ a.timeline-logo-frame:focus-visible {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* YCOM engineering automation suite */
+.metric-row-wide {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.tool-table {
+  background: var(--surface);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 8px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.05);
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.tool-row {
+  align-items: baseline;
+  border-top: 1px solid var(--soft);
+  display: grid;
+  gap: 6px 20px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+  padding: 16px 22px;
+}
+
+.tool-row:first-child {
+  border-top: 0;
+}
+
+.tool-row h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.tool-row h3 a {
+  color: var(--blue);
+}
+
+.tool-row p {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.tool-row .tool-result {
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.status-pill {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  margin-left: 8px;
+  padding: 3px 8px;
+  text-transform: uppercase;
+  vertical-align: 2px;
+  white-space: nowrap;
+}
+
+.status-pill.status-in-use {
+  background: var(--highlight-green-soft);
+  border-color: var(--highlight-green-border);
+  color: var(--highlight-green);
+}
+
+.status-pill.status-prototype {
+  background: rgba(0, 102, 204, 0.08);
+  border-color: rgba(0, 102, 204, 0.28);
+  color: var(--blue);
+}
+
+.featured-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 960px) {
+  .metric-row-wide,
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tool-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  }
+
+  .tool-row .tool-result {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .metric-row-wide,
+  .featured-grid,
+  .tool-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tool-row {
+    padding: 14px 16px;
+  }
+
+  .tool-row .tool-result {
+    grid-column: auto;
+  }
+}
+
+.metric-row + .tool-table {
+  margin-top: 18px;
+}
+
+.timeline-details-link {
+  color: var(--blue);
+  display: inline-block;
+  font-size: 0.88rem;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.timeline-details-link:hover {
+  text-decoration: underline;
+}
+
+.activity-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tool-card-label {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+.tool-card-block + .tool-card-block {
+  margin-top: 14px;
+}
+
+.cfd-gallery figure {
+  margin: 0;
+}
+
+.cfd-gallery figcaption {
+  color: var(--muted);
+  font-size: 0.86rem;
+  margin-top: 8px;
+}
+
+.cowfd-logo {
+  aspect-ratio: 1 / 1;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  display: block;
+  max-width: 520px;
+  object-fit: contain;
+  padding: 24px;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .activity-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.metric-row + .project-grid {
+  margin-top: 18px;
+}
+
+.metric-row + .project-overview-grid,
+.metric-row + .project-two-column {
+  margin-top: 24px;
+}
+
+#projects .project-card-placeholder span {
+  font-size: clamp(1.4rem, 2.1vw, 2.1rem);
+  letter-spacing: 0.05em;
+}
