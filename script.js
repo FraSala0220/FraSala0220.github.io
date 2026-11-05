@@ -66,6 +66,7 @@ const renderProfileSection = (section) => `
         <h2 id="${escapeHtml(section.id)}-title">${escapeHtml(section.title)}</h2>
       </div>
       <p>${escapeHtml(section.text)}</p>
+      ${section.storyHref ? `<a class="profile-story-link" href="${escapeHtml(section.storyHref)}">${escapeHtml(section.storyLabel)} <span aria-hidden="true">&rarr;</span></a>` : ""}
     </div>
   </section>
 `;

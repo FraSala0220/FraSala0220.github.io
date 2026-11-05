@@ -4,10 +4,12 @@ const outputDirectory = new URL("../dist/", import.meta.url);
 const siteConfig = JSON.parse(await readFile(new URL("../site-config.json", import.meta.url), "utf8"));
 const sourceFiles = [
   "index.html",
+  "about.html",
   "privacy-cookies.html",
   "styles.css",
   "data.js",
   "script.js",
+  "about.js",
   "google-tag.js",
   "cookie-consent.js",
   "_redirects",
@@ -43,7 +45,7 @@ const projectPages = (await readdir(new URL("projects/", outputDirectory)))
   .filter((file) => file.endsWith(".html"))
   .sort()
   .map((file) => `projects/${file}`);
-const htmlPages = ["index.html", ...projectPages, "privacy-cookies.html"];
+const htmlPages = ["index.html", "about.html", ...projectPages, "privacy-cookies.html"];
 
 const extract = (html, expression, fallback = "") => html.match(expression)?.[1]?.trim() || fallback;
 const normalizeText = (value) => value.replace(/\s+/g, " ").trim();
@@ -73,7 +75,7 @@ for (const relativePath of htmlPages) {
           name: "Francesco Sala",
           url: `${siteConfig.origin}/`,
           image: `${siteConfig.origin}/assets/francesco-sala-profile.jpg`,
-          jobTitle: "Mechanical Engineering M.Sc. Student",
+          jobTitle: "Mechanical Engineer",
           homeLocation: { "@type": "Place", name: "Milan, Italy" },
           sameAs: ["https://linkedin.com/in/francescosala2002"],
         },

@@ -3,6 +3,7 @@ window.PORTFOLIO_DATA = {
     name: "Francesco Sala",
     location: "Milan, Italy",
     nav: [
+      { label: "My Story", href: "about.html" },
       { label: "Experience", href: "#experience" },
       { label: "Projects", href: "#projects" },
       { label: "Skills", href: "#skills" },
@@ -13,7 +14,7 @@ window.PORTFOLIO_DATA = {
   hero: {
     eyebrow: "Motorsport | Structural Design | Composite Materials",
     title: "Francesco Sala",
-    subtitle: "Mechanical Engineering M.Sc. Student",
+    subtitle: "M.Sc. in Mechanical Engineering",
     text:
       "I design, analyze, and validate complex, precision-critical mechanical components for demanding engineering environments, connecting composite structures, FEA workflows, and manufacturing reality.",
     image: {
@@ -34,7 +35,9 @@ window.PORTFOLIO_DATA = {
       eyebrow: "Profile",
       title: "Curious, practical, and built for fast technical teams.",
       text:
-        "I am currently pursuing an M.Sc. in Computational Mechanical Design at Politecnico di Milano. My work connects structural engineering, manufacturing constraints, and track validation, with a strong interest in innovation and technology-driven product development.",
+        "I hold an M.Sc. in Mechanical Engineering from Politecnico di Milano, on the Computational Mechanical Design track. My work connects structural engineering, manufacturing constraints, and track validation, with a strong interest in innovation and technology-driven product development.",
+      storyHref: "about.html",
+      storyLabel: "Read my story",
     },
     {
       id: "experience",
