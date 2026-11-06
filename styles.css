@@ -2139,7 +2139,7 @@ html:has(.story-page) {
   display: flex;
   flex: 0 0 100%;
   flex-direction: column-reverse;
-  gap: 3px;
+  gap: 0;
   min-width: 0;
   order: -1;
 }
@@ -2153,30 +2153,39 @@ html:has(.story-page) {
   font-weight: 900;
   letter-spacing: 0.05em;
   min-width: 0;
-  padding: 13px 4px 9px;
+  padding: 12px 4px;
   position: relative;
   text-align: center;
   text-transform: uppercase;
 }
 
+.brick {
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.22);
+}
+
+/* Studs sit on top of each brick; the brick above covers them once it clicks in. */
 .brick::before {
-  background: radial-gradient(circle at center, var(--brick-color) 0 7px, transparent 8px) 0 0 / 25% 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 7%,
+    var(--brick-color) 7% 18%,
+    transparent 18% 25%
+  );
+  border-radius: 2px 2px 0 0;
   content: "";
-  height: 8px;
+  height: 6px;
   left: 0;
   position: absolute;
   right: 0;
-  top: -5px;
+  top: -6px;
 }
 
 .brick:focus-visible,
 .story-arrow:focus-visible {
   outline: 3px solid var(--blue);
   outline-offset: 2px;
-}
-
-.brick[aria-current="step"] {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
 }
 
 .brick-1 { --brick-color: #e10600; }
@@ -2505,7 +2514,8 @@ html:has(.story-page) {
 
 @media (prefers-reduced-motion: no-preference) {
   .story-ready a.brick.is-placed {
-    animation: brick-drop 0.32s ease-out;
+    animation: brick-drop 0.5s both;
+    z-index: 2;
   }
 
   .unknown-brick {
@@ -2536,8 +2546,34 @@ html:has(.story-page) {
 }
 
 @keyframes brick-drop {
-  from { transform: translateY(-14px); }
-  to { transform: none; }
+  0% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.6);
+    opacity: 0;
+    transform: translateY(-96px);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  62% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+
+  72% {
+    animation-timing-function: ease-in;
+    transform: translateY(-5px);
+  }
+
+  84% {
+    animation-timing-function: ease-out;
+    transform: translateY(1.5px);
+  }
+
+  100% {
+    transform: none;
+  }
 }
 
 @keyframes brick-hover {
@@ -2585,6 +2621,7 @@ html:has(.story-page) {
   .brick-row {
     flex: 1 1 auto;
     flex-direction: row;
+    gap: 3px;
     order: 0;
   }
 
@@ -2595,7 +2632,12 @@ html:has(.story-page) {
   }
 
   .brick::before {
-    background-size: 50% 100%;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0 12%,
+      var(--brick-color) 12% 38%,
+      transparent 38% 50%
+    );
   }
 
   .brick.brick-unknown {
